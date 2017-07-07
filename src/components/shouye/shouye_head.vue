@@ -3,7 +3,6 @@
       <div class="logo fl"></div>
       <input class="input fl" type="text" placeholder="百丽集团盛夏折扣季 领卷最多减20元">
       <div class="mesg fr">
-          <p class="span1"></p>
           <p class="span2">消息</p>
       </div>
 
@@ -41,9 +40,10 @@
   }
 
   #header{
+    width:100%;
     padding:0 5px;
     height: 1.1rem;
-    line-height: 1.1rem;
+    /*line-height: 1.1rem;*/
     background: rgba(255,255,200,.1);
     position: fixed;
     text-align: center;
@@ -56,14 +56,15 @@
       /*padding:0.1rem;*/
       margin:0.1rem 0;
       background:url('../../../src/assets/image/index/logo.png') no-repeat;
-   background-size: cover;
+     background-size: cover;
 
     }
     input.input{
       width: 7rem;
       height:0.9rem;
       line-height: 0.9rem;
-      margin:0.1rem .2rem;
+      /*margin:0.1rem .2rem;*/
+      margin:0.1rem;
       /*margin-bottom: 0;*/
       padding:0 0.3rem 0 0.7rem;
       -webkit-border-radius: 3px;
@@ -74,23 +75,17 @@
       background-size: 0.5rem;
     }
     div.mesg{
-      width:0.8rem;
+      width:0.7rem;
       height:1rem;
       text-align:center;
-      .span1{
-        margin:0 auto;
-        width: 0.6rem;
-        height:0.5rem;
-        background:red;
-        /*padding-top:0.5rem;*/
-        background: url("../../../src/assets/image/index/information-small.png") no-repeat;
-        background-size: cover;
-      }
       .span2{
         font-size: 12px;
         width: 0.8rem;
-        heihgt:0.5rem;
-        margin-top: -5px;
+        height:0.5rem;
+        padding-top:0.6rem;
+        background: url("../../../src/assets/image/index/information-small.png") no-repeat;
+        background-size: 18px;
+        background-position: 0.15rem 0.1rem;
         color: #fff;
       }
     }

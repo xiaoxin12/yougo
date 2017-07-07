@@ -54,8 +54,84 @@
             </li>
 
           </ul>
-        <section>
-          这里继续写入图片列表
+        <section class="listimg4">
+          <ul class="dapaiindex">
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (1).jpg" alt="">
+              </a>
+            </li>
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (2).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (3).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (4).jpg" alt="">
+              </a>
+            </li>
+
+          </ul>
+          <ul class="dapaiindex">
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (5).jpg" alt="">
+              </a>
+            </li>
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (6).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (7).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (8).jpg" alt="">
+              </a>
+            </li>
+
+          </ul>
+        </section>
+      <!--折是空白线-->
+      <img class="dapaiindex_img" src="../../../src/assets/image/index/line-margin.jpg" alt="">
+
+      <section>
+          <ul class="list2">
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (1).jpg" alt="">
+              </a>
+            </li>
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (2).jpg" alt="">
+              </a>
+            </li>
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (3).jpg" alt="">
+              </a>
+            </li>
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (4).jpg" alt="">
+              </a>
+            </li>
+          </ul>
         </section>
     </div>
 </template>
@@ -80,6 +156,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  body{
+    background:#eee;
+  }
 
   .fl{
     float:left;
@@ -132,10 +211,11 @@
  .dapaiindex{
     width:100%;
     height:3.5rem;
-    display: flex;
+    /*display: flex;*/
     flex-direction:row;
     li{
-      flex: 1;
+      width:25%;
+      /*flex: 1;*/
       a{
         img{
           width:100%;
@@ -145,7 +225,22 @@
       }
     }
   }
-
+  section{
+    ul.list2{
+      width:100%;
+      height:4rem;
+      li{
+        width:50%;
+        height:50%;
+        a{
+          img{
+            width:5rem;
+            height:100%;
+          }
+        }
+      }
+    }
+  }
 
 
   }
