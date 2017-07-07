@@ -1,18 +1,21 @@
 <template>
-<div class="all Lists">
-	<div id="header">
-		列表页
-	</div>
-	<div id="con"></div>
+<div class="all lists">
+	<headers></headers>
+	<containers></containers>
 	<navbar></navbar>
 </div>
 </template>
 
 <script>
+import Headers  from './lists/Header.vue'
+import Containers  from './lists/Container.vue'
 import Navbar  from './Nav.vue'
+
 export default {
   name: 'lists',
   components: {
+  	   Headers,
+  	   Containers,
        Navbar 
   },
   data () {
@@ -25,13 +28,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#header{
-	height: 1.5rem;
-	line-height: 1.5rem;
-	background: #0096FF;
-	position: relative;
-	text-align: center;
-	overflow: hidden;
+.lists{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	background: #eee;	
 }
-
 </style>

@@ -47,6 +47,7 @@ a{
 }
 #con{
 	flex: 1;
+	overflow-x: hidden;
 }
 .footer{
 	height: 1.5rem;
