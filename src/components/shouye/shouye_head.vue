@@ -45,9 +45,11 @@
     height: 1.1rem;
     line-height: 1.1rem;
     background: rgba(255,255,200,.1);
-    position: relative;
+    position: fixed;
     text-align: center;
     overflow: hidden;
+    top:0;
+    z-index:999;
     .logo{
       width:1.5rem;
       height:0.9rem;
