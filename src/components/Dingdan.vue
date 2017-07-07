@@ -1,9 +1,12 @@
 <template>
 <div class="all Dingdan">
 	<div id="header">
-		订单
+		<span class="carH">购物车</span><a href="#">登录</a>
 	</div>
-	<div id="con"></div>
+	<div id="con">
+		<img src="../assets/car/car.png"/>
+		<p>购物车是空的!</p>
+	</div>
 	<navbar></navbar>
 </div>
 </template>
@@ -24,14 +27,31 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 #header{
-	height: 1.5rem;
-	line-height: 1.5rem;
-	background: #0096FF;
-	position: relative;
+	height: 1rem;
+	line-height: 1rem;
+	background: #f5f5f5;
 	text-align: center;
 	overflow: hidden;
+	font-size: 18px;
+	position: relative;
+	a{
+		position: absolute;
+		right: .4rem;
+		font-size: 12px;
+		color: #666;
+	}
+}
+#con{
+	background: #eee;
+	text-align: center;
+	img{
+		width: 2.5rem;
+		height: 2rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
 }
 
 </style>

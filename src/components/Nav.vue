@@ -34,7 +34,7 @@ export default {
 }
 
 .footer .router-link-active{
-	color: yellowgreen;
+	color: blue;
 }
 .footer a{
 	box-sizing: border-box;
