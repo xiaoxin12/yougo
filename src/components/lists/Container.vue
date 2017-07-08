@@ -1,19 +1,11 @@
 <template>
 	<div id="container" >
 		<ul class="aside">
-			<li v-on:click="changeColor"  v-bind:class="{active: isActive }">女鞋</li>	
-			<li>男鞋</li>
-			<li>运动</li>
-			<li>户外</li>
-			<li>男装</li>
-			<li>女装</li>
-			<li>箱包</li>
-			<li>童鞋童装</li>
-			<li>化妆品</li>
-			<li>全部品牌</li>
-			<li>专柜同款</li>
+			<li v-for="(sort,index) in productList" @click="getTabDetail(index)" v-bind:class="{ linvxie: index==selectItem }">
+		      {{sort.name}}
+		   </li>
 		</ul>
-		<div class="shop">
+		<div class="nvxie"  v-if="selectItem == 0">
 			<div class="top_pic">
 				<img src="../../assets/lists/nvxie/1499061169454.jpg" alt="" />
 			</div>
@@ -27,6 +19,7 @@
 					<li>
 						<a href="">
 							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
+							<!--<img src="https://heweijie.me/img/img (32).jpg" alt="" />-->
 							<p>百丽</p>
 						</a>
 					</li>
@@ -144,24 +137,66 @@
 				</ul>
 			</div>
 		</div>
+		<div class="nvxie"  v-if="selectItem == 1">
+			男鞋
+		</div>
+		<div class="nvxie"  v-if="selectItem == 2">
+			户外
+		</div>
+		<div class="nvxie"  v-if="selectItem == 3">
+			运动
+		</div>
+		<div class="nvxie"  v-if="selectItem == 4">
+			男装
+		</div>
+		<div class="nvxie"  v-if="selectItem == 5">
+			女装
+		</div>
+		<div class="nvxie"  v-if="selectItem == 6">
+			箱包
+		</div>
+		<div class="nvxie"  v-if="selectItem == 7">
+			童鞋童装
+		</div>
+		<div class="nvxie"  v-if="selectItem == 8">
+			化妆品
+		</div>
+		<div class="nvxie"  v-if="selectItem == 9">
+			全部品牌
+		</div>
+		<div class="nvxie"  v-if="selectItem == 10">
+			专柜同款
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
 	  name: 'container',
-	  data:{
-	  		isActive:false
-	  },
 	  data : function () {
 	    return {
-	    	isActive:false
+	    	selectItem:0,
+	    	type:"nvxie",
+	    	isnvxie:"ture",
+	    	productList:[]
 	    }
 	  },
+	   mounted:function() {
+	   	this.readyss()
+	   },
+	  
 	  methods: {
-	  	changeColor:function(){
-	  			this.isActive = true
-	  	}
+		  	getTabDetail(index){
+		  			this.selectItem = index
+		  			console.log(index)
+		  	},
+		  	readyss: function() {
+			    this.$http.get('/data/lists.json')
+		        .then(function(res){
+		        	this.productList = res.data
+		   	 		})
+	        }
+	  	
 	  }
 }
 </script>
@@ -195,11 +230,11 @@
 			    white-space: nowrap;
 			    border-bottom: 1px solid #ccc;
 			}
-			li.active{
-				background: #f60;
+			li.linvxie{
+				background: #eee;
 			}
 		}
-		.shop{
+		.nvxie{
 			float:right;
 			width: 7.6rem;
 			padding: 0 pr(20px);
