@@ -6,6 +6,7 @@
 	<div id="con">
 		<img src="../assets/car/car.png"/>
 		<p>购物车是空的!</p>
+		<router-link to="/detail">去详情页（测试）</router-link>
 	</div>
 	<navbar></navbar>
 </div>
