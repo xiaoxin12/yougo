@@ -1,14 +1,11 @@
 <template>
 <div class="all Dingdan">
 	<div id="header">
-		<span class="carH">购物车</span><router-link to="/wode" >去登录</router-link>
+		<span class="carH">购物车</span><a href="#">登录</a>
 	</div>
 	<div id="con">
 		<img src="../assets/car/car.png"/>
 		<p>购物车是空的!</p>
-		
-		
-		<router-link to="/detail">去详情页（测试）</router-link>
 	</div>
 	<navbar></navbar>
 </div>

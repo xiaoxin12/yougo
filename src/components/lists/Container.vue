@@ -1,5 +1,6 @@
 <template>
-	<div id="container" >
+	<div id="container"  >
+	  <div class="containerPage" v-show="$store.state.lists_container">
 		<ul class="aside">
 			<li v-for="(sort,index) in productList" @click="getTabDetail(index)" v-bind:class="{ linvxie: index==selectItem }">
 		      {{sort.name}}
@@ -167,6 +168,24 @@
 		<div class="nvxie"  v-if="selectItem == 10">
 			专柜同款
 		</div>
+	  </div>
+	  <div class="searchpage" v-show="!$store.state.lists_container">
+	  	<div class="searchCon">
+	  		<div>
+	  			热门搜索
+	  		</div>
+	  		<ul>
+	  			<li><a href="">百丽</a></li>
+	  			<li><a href="">阿迪达斯</a></li>
+	  			<li><a href="">耐克</a></li>
+	  			<li><a href="">T恤</a></li>
+	  			<li><a href="">凉鞋</a></li>
+	  			<li><a href="">女鞋</a></li>
+	  			<li><a href="">卫衣</a></li>
+	  			<li><a href="">跑步鞋</a></li>
+	  		</ul>
+	  	</div>
+	  </div>
 	</div>
 </template>
 
@@ -211,6 +230,7 @@
 	#container{
 		flex: 1;
 		overflow-x: hidden;
+		.containerPage{
 		ul.aside{
 			width: pr(250px);
 			display: flex;
@@ -283,7 +303,42 @@
 					  }
 					  
 					}
+				}
 			}
 		}
-	}
+		.searchpage{
+			width: 100%;
+			height: 600px;
+			background-color: #fff;
+			overflow: hidden;
+			.searchCon{
+				div{
+					padding: 10px 0;
+					padding-left: 30px;
+					background: url("../../assets/lists/search/hot.png") no-repeat left center;
+					background-size:pr(40px) pr(60px);
+					margin: 0 20px;
+					
+				}
+				ul{
+					
+					li{ 
+						float:left;
+							a{
+								display: block;
+								color: #666;
+								padding: 3px 12px;
+								background: #eee;
+								border-radius: 5px;
+								font-size: 14px;
+								line-height: 24px;
+								margin-left: 20px;
+								margin-bottom: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	
 </style>

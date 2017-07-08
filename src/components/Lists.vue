@@ -1,8 +1,8 @@
 <template>
 <div class="all lists">
-	<headers></headers>
-	<containers></containers>
-	<navbar></navbar>
+	<headers ></headers>
+	<containers ></containers>
+	<navbar v-show="$store.state.lists_container"></navbar>
 </div>
 </template>
 

@@ -9,7 +9,7 @@ Vue.use(Vuex)
 const state = {
   count: 0,
   list: ['a','b','c'],
-  lists_container:true
+  lists_container:true,
 }
 
 // mutations are operations that actually mutates the state.
