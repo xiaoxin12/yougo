@@ -2,7 +2,7 @@
 <div id="nav" class="footer">
 	<router-link to="/" exact class="n_one">首页</router-link>
 	<router-link to="/lists" exact class="n_two">分类</router-link>
-	<router-link to="/detail" exact class="n_three">分享购</router-link>
+	<router-link to="/share" exact class="n_three">分享购</router-link>
 	<router-link to="/dingdan" exact class="n_four">购物车</router-link>
 	<router-link to="/wode" exact class="n_five">我的</router-link>
 </div>

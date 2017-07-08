@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Shouye from '@/components/Shouye'
-import Detail from '@/components/Detail'
+import Share from '@/components/Share'
 import Lists from '@/components/Lists'
 import Dingdan from '@/components/Dingdan'
 import Wode from '@/components/Wode'
-
+import Detail from '@/components/childpage/Detail'
 
 Vue.use(Router)
 
@@ -17,9 +17,9 @@ export default new Router({
       component: Shouye
     },
     {
-      path: '/detail',
-      name: 'Detail',
-      component: Detail
+      path: '/share',
+      name: 'Share',
+      component: Share
     },
     {
       path: '/lists',
@@ -35,6 +35,11 @@ export default new Router({
       path: '/wode',
       name: 'Wode',
       component: Wode
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })
