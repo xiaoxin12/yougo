@@ -1,11 +1,12 @@
 <template>
-	<div id="header" >
+	<div id="header" v-show="$store.state.lists_container">
 		<div class="arrow">
+			
 			<a href="/"><img src="../../assets/lists/nvxie/new-back.png"></img></a>
 		</div>
 		<div class="search">
 			<form action="" >
-				<input type="text" placeholder="请输入关键字"/>
+				<input type="text" placeholder="请输入关键字" @click="showCon()"/>
 			</form>
 			<a href=""> <img src="../../assets/lists/nvxie/ygseach.png" alt="" /></a>
 		</div>
@@ -18,12 +19,23 @@
 </template>
 
 <script>
+	import { mapGetters, mapActions } from 'vuex'
 	export default {
 	  name: 'header',
 	  data : function () {
 	    return {
 	    }
+	  },
+	  methods:{
+    	...mapActions([
+	    'listCon'
+	  ]),
+	  showCon : function(){
+	  	this.listCon({
+	  		lists_container :false
+	  	});
 	  }
+	}
 }
 </script>
 
@@ -87,5 +99,8 @@
 				
 			}
 		}
+	}
+	#container{
+		display: none;
 	}
 </style>

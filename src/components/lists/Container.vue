@@ -171,6 +171,7 @@
 </template>
 
 <script>
+	import Headers  from './Header.vue'
 	export default {
 	  name: 'container',
 	  data : function () {

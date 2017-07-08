@@ -34,4 +34,5 @@ export default {
 	flex-direction: column;
 	background: #eee;	
 }
+
 </style>

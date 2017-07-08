@@ -9,6 +9,7 @@ Vue.use(Vuex)
 const state = {
   count: 0,
   list: ['a','b','c'],
+  lists_container:true
 }
 
 // mutations are operations that actually mutates the state.
@@ -19,6 +20,9 @@ const state = {
 const mutations = {
   addTodo (state,{text}) {
     state.list.push(text)
+  },
+  listCon (state,{lists_container}){
+  	state.lists_container = lists_container;
   }
 }
 
