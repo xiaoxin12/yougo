@@ -10,7 +10,7 @@
 
         <ul class="list4">
           <li class="fl">
-            <a href="">
+            <a href="#myorder">
               <img class="dapaiindex_img" src="../../../src/assets/image/index/ajax/brands1 (1).jpg" alt="">
             </a>
           </li>

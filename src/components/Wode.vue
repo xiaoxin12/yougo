@@ -33,9 +33,14 @@
 				<p class="c2p3">账户管理></p>
 				<p class="c2p4" @click="zhuxiao()">注销</p>
 			</div>
-			<div class="c2c1">
+			<!-- <div class="c2c1">
 				我的订单<span class="r">全部订单</span>
-			</div>
+			</div> -->
+			<router-link to="/myorder" class="routebox">
+				<div class="c2c1">
+						我的订单<span class="r">全部订单</span>
+				</div>
+			</router-link>
 			<div class="c2c2">
 				<p class="c2p1">待付款</p>
 				<p class="c2p2">查看物流</p>
