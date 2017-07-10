@@ -1,7 +1,7 @@
 <template>
 <div class="all Dingdan">
 	<div id="header">
-		<span class="carH">购物车</span><a href="#">登录</a>
+		<span class="carH">购物车</span><router-link to="/wode">登录</router-link>
 	</div>
 	<div id="con">
 		<img src="../assets/car/car.png"/>

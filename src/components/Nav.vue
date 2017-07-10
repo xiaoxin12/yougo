@@ -28,6 +28,8 @@ export default {
 	display: flex;
 	font-size: 12px;
 	justify-content: space-around;
+	position: relative;
+	z-index: 999;
 }
 .footer a{
 	color: black;
@@ -40,7 +42,7 @@ export default {
 	box-sizing: border-box;
 	display: inline-block;
 	padding-top: .4rem;
-	width: 1rem;
+	width: 2rem;
 	text-align: center;
 }
 .n_one{

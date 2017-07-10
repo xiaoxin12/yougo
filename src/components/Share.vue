@@ -7,7 +7,7 @@
 		<div class="top">
 			<img src="../assets/share/pic_001.jpg" class="beijing"/>
 			<img class="userImg" src="../assets/share/pic_002.png"/>
-			<p class="tipsL">您好，请<a href="#">登录</a></p>
+			<p class="tipsL">您好，请<router-link to="/wode">登录</router-link></p>
 			<p class="tipsL1">红包分享给好友使用就能获得<span>2%</span>红利</p>
 		</div>
 		<div class="quan">
@@ -200,10 +200,15 @@ export default {
 		padding-left: 2rem;
 		box-sizing: content-box;
 		background: url(../assets/share/user1.png) no-repeat 0.5rem 0.15rem;
+		overflow: hidden;
 		.p1{
 			color: #D3B67A;
 			font-size: 14px;
 			margin-top: 0.2rem;
+			width: 8rem;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 		.p2{
 			color: #999;
