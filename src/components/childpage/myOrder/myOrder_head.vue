@@ -25,31 +25,31 @@
 			<!-- tab-container -->
 			<mt-tab-container v-model="selected">
 				<mt-tab-container-item id="1">
-					<div v-for="n in 2" :title="'内容 ' + n" >
-						<div class="shop">
+					<div v-for="(sort,index)  in product " >
+						<div class="shop" >
 							<div class="title">
-								<p class="creat_time fl">下单时间:2017-06-30</p>
+								<p class="creat_time fl">下单时间:{{sort.creattime}}</p>
 								<!-- 这里输入订单状态 -->
-								<span class="fr state">已取消</span>
+								<span class="fr state">{{sort.assert}}</span>
 							</div>
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
 									<a href="">
-										<img src="http://i2.ygimg.cn/pics/converse/2016/100368752/100368752_01_m.jpg?4">
+										<img v-bind:src="sort.src">
 									</a>
 								</span>
 								<section class="fl">
-									<p>这里是对产品的描述</p>
+									<p>{{sort.description}}</p>
 								</section>
 							</div>
 							<div class="footers">
 								<div class="fl">总计：
-									<span class="price">￥262元</span>
-									（共 <span class="count">1件</span>）
+									<span class="price">￥{{sort.price}}元</span>
+									（共 <span class="count">{{sort.count}}件</span>）
 								</div>
 								<div class="footer_fr fr">
-									<a href="">重新购买</a>
+									<a href="">{{sort.again}}</a>
 								</div>
 							</div>
 						</div>
@@ -163,6 +163,7 @@
 				<p>仅显示六个月内的消息</p>
 				<p>历史信息请到电脑端查看</p>
 			</div>
+			<!--<Testajax></Testajax>-->
 		</div>
 		
 		
@@ -172,6 +173,8 @@
 <script>
 import { Navbar, Cell,TabItem , TabContainer, TabContainerItem} from 'mint-ui';
 import Vue from 'vue';
+import Testajax from './testajax.vue';
+import { mapGetters, mapActions } from 'vuex'
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 Vue.component(Cell.name, Cell);
@@ -180,21 +183,53 @@ Vue.component(TabContainerItem.name, TabContainerItem);
 export default {
   name: 'myOrder_head',
   components: {
-
+	Testajax
   },
   data () {
     return {
     	selected:'1',
     	menu: false,
+    	product:[]
     }
   },
+  mounted(){
+  	this.ajaxfun()
+  },
   methods: {
+  	 ...mapActions([
+	    'savedata',
+	    'updateflag'
+	  ]
+    ),
   	showmenu: function(){
   		this.menu = !this.menu;
   	},
   	lists_select: function (){
 		console.log('准备发送ajax进行链表查询返回订单信息');		
-  	}
+  	},
+  	ajaxfun: function () {
+		this.updateflag(true);
+		//ajax
+		// GET /someUrl
+		 this.$http.get('/data/dingdan.json').then(res => {
+		
+		    // get body data
+		   
+//		    console.log(JSON.parser(res));
+			for(var i = 0;i<eval(res.body).length;i++){
+				this.product .push(eval(res.body)[i]);
+				console.log((res.body)[i]);
+			}
+		    
+		    console.log( this.product);
+
+//		    this.someData = response.body;
+		
+		  }, response => {
+		    // error callback
+		  });
+    	
+    }
   }
 }
 </script>
