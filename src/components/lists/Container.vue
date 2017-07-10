@@ -171,10 +171,10 @@
 	  </div>
 	  <div class="searchpage" v-show="!$store.state.lists_container">
 	  	<div class="searchCon">
-	  		<div>
+	  		<div class="hotSearch">
 	  			热门搜索
 	  		</div>
-	  		<ul>
+	  		<ul class="hotworld">
 	  			<li><a href="">百丽</a></li>
 	  			<li><a href="">阿迪达斯</a></li>
 	  			<li><a href="">耐克</a></li>
@@ -184,6 +184,15 @@
 	  			<li><a href="">卫衣</a></li>
 	  			<li><a href="">跑步鞋</a></li>
 	  		</ul>
+	  		<div class="searchHistory" v-show="!$store.state.search.length==0">
+	  			<div class="history">历史搜索</div>
+	  			<ul>
+	  				<li v-for="item in $store.state.search">
+	  					<a href="">{{item}}</a>
+	  				</li>
+	  			</ul>
+	  			<div class="reset" @click="reset">清楚搜索记录</div>
+	  		</div>
 	  	</div>
 	  </div>
 	</div>
@@ -191,6 +200,7 @@
 
 <script>
 	import Headers  from './Header.vue'
+	import { mapGetters, mapActions } from 'vuex'
 	export default {
 	  name: 'container',
 	  data : function () {
@@ -204,18 +214,25 @@
 	   mounted:function() {
 	   	this.readyss()
 	   },
-	  
 	  methods: {
 		  	getTabDetail(index){
 		  			this.selectItem = index
 		  			console.log(index)
 		  	},
 		  	readyss: function() {
-			    this.$http.get('https://heweijie.me/data/lists.json')
+			    this.$http.get('/data/lists.json')
 		        .then(function(res){
 		        	this.productList = res.data
 		   	 		})
-	        }
+	       },
+		  	...mapActions([
+			   'reset'
+			  ]),
+			  delete : function(){
+			  	this.reset({
+			  		resetInfo : []
+			  	});
+			  }
 	  	
 	  }
 }
@@ -308,11 +325,11 @@
 		}
 		.searchpage{
 			width: 100%;
-			height: 600px;
+			height: pr(2400px);
 			background-color: #fff;
 			overflow: hidden;
 			.searchCon{
-				div{
+				.hotSearch{
 					padding: 10px 0;
 					padding-left: 30px;
 					background: url("../../assets/lists/search/hot.png") no-repeat left center;
@@ -320,24 +337,56 @@
 					margin: 0 20px;
 					
 				}
-				ul{
-					
+				ul.hotworld{
+						overflow: hidden;
 					li{ 
 						float:left;
 							a{
 								display: block;
 								color: #666;
-								padding: 3px 12px;
+								padding: pr(12px) pr(48px);
 								background: #eee;
-								border-radius: 5px;
+								border-radius: pr(20px);
 								font-size: 14px;
-								line-height: 24px;
-								margin-left: 20px;
-								margin-bottom: 20px;
+								line-height: pr(96px);
+								margin-left: pr(40px);
+								margin-bottom: pr(40px);
 							}
 						}
 					}
+				.searchHistory{
+				 .history{
+				 	font-size: 14px;
+				    color: #a0a0a0;
+				    padding: pr(48px) pr(40px);
+				    border-bottom: 1px solid #ddd;
+				 }
+				 ul{
+				 	li{
+				 		border-bottom: 1px solid #ddd;
+				 		a{
+				 			display: block;
+						    padding: pr(60px) pr(40px);
+						    font-size: 14px;
+						    line-height: pr(68px);
+						    white-space: nowrap;
+						    text-overflow: ellipsis;
+						    position: relative;
+						    overflow: hidden;
+				 		}
+				 	}
+				 }
+				 .reset{
+				 		margin: pr(40px) 30%;
+				 	    text-align: center;
+				 	    display: inline-block;
+					    font-size: 14px;
+					    padding: pr(30px) pr(48px);
+					    border: 1px solid #a0a0a0;
+					    border-radius: pr(20px);
+				 }
 				}
+			  }
 			}
 		}
 	

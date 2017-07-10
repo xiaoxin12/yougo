@@ -10,7 +10,11 @@ const state = {
   count: 0,
   list: ['a','b','c'],
   lists_container:true,
+<<<<<<< HEAD
   wating:false
+=======
+  search:[]
+>>>>>>> 233f7b6259eda9ed06b00a497134e6995dccb61d
 }
 
 // mutations are operations that actually mutates the state.
@@ -25,11 +29,19 @@ const mutations = {
   listCon (state,{lists_container}){
   	state.lists_container = lists_container;
   },
+<<<<<<< HEAD
   savedata(state,{data}) {
     state.list.push(data);
   },
   updateflag(state,{flag}) {
    state.wating = flag;
+=======
+  searchData (state,{search_Info}){
+    state.search.push(search_Info)
+  },
+  reset (state,{resetInfo}){
+    state.search=[]
+>>>>>>> 233f7b6259eda9ed06b00a497134e6995dccb61d
   }
 }
 
