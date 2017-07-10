@@ -28,8 +28,8 @@
 			<div class="one">
 				<img src="static/share/pic_005.jpg"/><img src="static/share/pic_007.jpg" class="img2"/>
 			</div>
-			<div class="two"></div>
-			<div class="three"></div>
+			<div class="two"><img src="static/share/pic_006.jpg"/></div>
+			<div class="three"><img src="static/share/pic_008.jpg"/></div>
 		</div>
 		<p class="jiaoni">内容值得分享</p>
 		<img src="static/share/pic_010.jpg" class="datu"/>
@@ -182,13 +182,13 @@ export default {
 		.two,.three{
 			height: 2.4rem;
 			left: 5.2rem;
-			background: url(../assets/share/pic_006.jpg) no-repeat center;
-			background-size: 100% 100%;
+			img{
+				width: 100%;
+				height: 100%;
+			}
 		}
 		.three{
 			top: 2.6rem;
-			background: url(../assets/share/pic_008.jpg) no-repeat center;
-			background-size: 100% 100%;
 		}
 	}
 	.datu{

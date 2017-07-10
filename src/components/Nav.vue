@@ -46,23 +46,23 @@ export default {
 	text-align: center;
 }
 .n_one{
-	background: url("../assets/nav/首页.png") no-repeat center 0.1rem;
+	background: url("../assets/nav/shouye.png") no-repeat center 0.1rem;
 	background-size: 0.8rem 0.8rem;
 }
 .n_two{
-	background: url("../assets/nav/分类.png") no-repeat center 0.1rem;
+	background: url("../assets/nav/fenlei.png") no-repeat center 0.1rem;
 	background-size: 0.8rem 0.8rem;
 }
 .n_three{
-	background: url("../assets/nav/分享.png") no-repeat center 0.1rem;
+	background: url("../assets/nav/fenxiang.png") no-repeat center 0.1rem;
 	background-size: 0.8rem 0.8rem;
 }
 .n_four{
-	background: url("../assets/nav/购物车.png") no-repeat center 0.1rem;
+	background: url("../assets/nav/car.png") no-repeat center 0.1rem;
 	background-size: 0.8rem 0.8rem;
 }
 .n_five{
-	background: url("../assets/nav/我的.png") no-repeat center 0.1rem;
+	background: url("../assets/nav/wode.png") no-repeat center 0.1rem;
 	background-size: 0.8rem 0.8rem;
 }
 </style>

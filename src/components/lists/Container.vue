@@ -211,7 +211,7 @@
 		  			console.log(index)
 		  	},
 		  	readyss: function() {
-			    this.$http.get('/data/lists.json')
+			    this.$http.get('https://heweijie.me/data/lists.json')
 		        .then(function(res){
 		        	this.productList = res.data
 		   	 		})

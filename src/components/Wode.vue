@@ -107,7 +107,7 @@ export default {
   },
   mounted: function () {
   	console.log($.cookie('username'));
-  	if($.cookie('username')==='null' || $.cookie('username')==='undefined'){
+  	if($.cookie('username')==='null' || $.cookie('username')===undefined){
   		this.testL = false;
   	}else{
   		this.testL = true;
@@ -126,7 +126,7 @@ export default {
   	login: function() {
   	  var that = this;
   	  that.loading = "正在登录，请稍候";
-      this.$http.post('/api/users/login', {
+      this.$http.post('http://10.2.153.179/thinkphp/public/api/users/login', {
         name: this.name,
         pw: this.pw
       }).then(function(data){
