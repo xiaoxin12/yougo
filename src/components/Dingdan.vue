@@ -4,7 +4,7 @@
 		<span class="carH">购物车</span><router-link to="/wode">登录</router-link>
 	</div>
 	<div id="con">
-		<img src="static/car/car.png"/>
+		<img src="../assets/car/car.png"/>
 		<p>购物车是空的!</p>
 		<router-link to="/detail">去详情页（测试）</router-link>
 	</div>

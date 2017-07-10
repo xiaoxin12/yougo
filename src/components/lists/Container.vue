@@ -8,7 +8,7 @@
 		</ul>
 		<div class="nvxie"  v-if="selectItem == 0">
 			<div class="top_pic">
-				<img src="static/lists/nvxie/1499061169454.jpg" alt="" />
+				<img src="../../assets/lists/nvxie/1499061169454.jpg" alt="" />
 			</div>
 			<div class="title">
 				<a href="">
@@ -19,56 +19,56 @@
 				<ul>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
 							<!--<img src="https://heweijie.me/img/img (32).jpg" alt="" />-->
 							<p>百丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210037675.jpg" alt="" />
 							<p>天美意</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210051044.jpg" alt="" />
 							<p>他他</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210065265.jpg" alt="" />
 							<p>拔佳</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210079180.jpg" alt="" />
 							<p>思加图</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>百思图</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210113052.jpg" alt="" />
 							<p>森达</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210133902.jpg" alt="" />
 							<p>妙丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1473813826304.jpg" alt="" />
 							<p>全部品牌</p>
 						</a>
 					</li>
@@ -83,55 +83,55 @@
 				<ul>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>小白鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210037675.jpg" alt="" />
 							<p>乐福鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210051044.jpg" alt="" />
 							<p>休闲鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210065265.jpg" alt="" />
 							<p>松糕鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210079180.jpg" alt="" />
 							<p>内增高</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>帆布鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210113052.jpg" alt="" />
 							<p>运动鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1487210133902.jpg" alt="" />
 							<p>妙丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
+							<img src="../../assets/lists/nvxie/1473813826304.jpg" alt="" />
 							<p>全部品牌</p>
 						</a>
 					</li>
@@ -171,10 +171,10 @@
 	  </div>
 	  <div class="searchpage" v-show="!$store.state.lists_container">
 	  	<div class="searchCon">
-	  		<div>
+	  		<div class="hotSearch">
 	  			热门搜索
 	  		</div>
-	  		<ul>
+	  		<ul class="hotworld">
 	  			<li><a href="">百丽</a></li>
 	  			<li><a href="">阿迪达斯</a></li>
 	  			<li><a href="">耐克</a></li>
@@ -184,6 +184,15 @@
 	  			<li><a href="">卫衣</a></li>
 	  			<li><a href="">跑步鞋</a></li>
 	  		</ul>
+	  		<div class="searchHistory" v-show="!$store.state.search.length==0">
+	  			<div class="history">历史搜索</div>
+	  			<ul>
+	  				<li v-for="item in $store.state.search">
+	  					<a href="">{{item}}</a>
+	  				</li>
+	  			</ul>
+	  			<div class="reset" @click="reset">清楚搜索记录</div>
+	  		</div>
 	  	</div>
 	  </div>
 	</div>
@@ -191,6 +200,7 @@
 
 <script>
 	import Headers  from './Header.vue'
+	import { mapGetters, mapActions } from 'vuex'
 	export default {
 	  name: 'container',
 	  data : function () {
@@ -204,7 +214,6 @@
 	   mounted:function() {
 	   	this.readyss()
 	   },
-	  
 	  methods: {
 		  	getTabDetail(index){
 		  			this.selectItem = index
@@ -215,7 +224,15 @@
 		        .then(function(res){
 		        	this.productList = res.data
 		   	 		})
-	        }
+	       },
+		  	...mapActions([
+			   'reset'
+			  ]),
+			  delete : function(){
+			  	this.reset({
+			  		resetInfo : []
+			  	});
+			  }
 	  	
 	  }
 }
@@ -312,7 +329,7 @@
 			background-color: #fff;
 			overflow: hidden;
 			.searchCon{
-				div{
+				.hotSearch{
 					padding: 10px 0;
 					padding-left: 30px;
 					background: url("../../assets/lists/search/hot.png") no-repeat left center;
@@ -320,8 +337,8 @@
 					margin: 0 20px;
 					
 				}
-				ul{
-					
+				ul.hotworld{
+						overflow: hidden;
 					li{ 
 						float:left;
 							a{
@@ -337,7 +354,39 @@
 							}
 						}
 					}
+				.searchHistory{
+				 .history{
+				 	font-size: 14px;
+				    color: #a0a0a0;
+				    padding: 12px 10px;
+				    border-bottom: 1px solid #ddd;
+				 }
+				 ul{
+				 	li{
+				 		border-bottom: 1px solid #ddd;
+				 		a{
+				 			display: block;
+						    padding: 15px 10px;
+						    font-size: 14px;
+						    line-height: 17px;
+						    white-space: nowrap;
+						    text-overflow: ellipsis;
+						    position: relative;
+						    overflow: hidden;
+				 		}
+				 	}
+				 }
+				 .reset{
+				 		margin: 10px 35%;
+				 	    text-align: center;
+				 	    display: inline-block;
+					    font-size: 14px;
+					    padding: 5px 12px;
+					    border: 1px solid #a0a0a0;
+					    border-radius: 5px;
+				 }
 				}
+			  }
 			}
 		}
 	

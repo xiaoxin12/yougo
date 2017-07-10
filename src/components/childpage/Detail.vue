@@ -1,8 +1,8 @@
 <template>
 <div class="all Detail">
 	<div id="header">
-		<router-link to="/dingdan"><img src="static/detail/new-back.png" class="return" /></router-link><span class="carH">商品详情</span>
-		<img src="static/detail/ico-menu.png" @click="showmenu()" class="menu" />
+		<router-link to="/dingdan"><img src="../../assets/detail/new-back.png" class="return" /></router-link><span class="carH">商品详情</span>
+		<img src="../../assets/detail/ico-menu.png" @click="showmenu()" class="menu" />
 	</div>
 	<div id="con">
 		<div class="menu1" v-show="menu">
@@ -13,22 +13,22 @@
 		</div>
 		<mt-swipe :auto="0" class="swiper">
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_001.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_001.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_002.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_002.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_003.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_003.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_004.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_004.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_005.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_005.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_006.jpg" class="lunbo" />
+		  	<img src="../../assets/detail/pic_006.jpg" class="lunbo" />
 		  </mt-swipe-item>
 		</mt-swipe>
 		<div class="name">
@@ -45,50 +45,50 @@
 		</p>
 		<p class="chima">
 			选择：颜色/尺码
-			<img src="static/detail/open.png" class="r"/>
+			<img src="../../assets/detail/open.png" class="r"/>
 		</p>
 		<p class="chima">
 			评价（0）
-			<img src="static/detail/open.png" class="r"/>
+			<img src="../../assets/detail/open.png" class="r"/>
 		</p>
 		<p class="chima">
-			<img src="static/detail/pic_015.jpg" class="l"/>
+			<img src="../../assets/detail/pic_015.jpg" class="l"/>
 			<span>品牌：阿迪休闲</span>
 			<span>发货：百丽优购</span>
-			<img src="static/detail/open.png" class="r"/>
+			<img src="../../assets/detail/open.png" class="r"/>
 		</p>
 		<p class="chima">
 			选择此商品的人还买了
-			<img src="static/detail/open.png" class="r"/>
+			<img src="../../assets/detail/open.png" class="r"/>
 		</p>
 		<div class="pro_o">
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
+				<img src="../../assets/detail/pic_039.jpg"/>
 				<p class="pro_name">阿迪达斯运动鞋</p>
 				<p class="pro_price">￥355</p>
 			</div>
@@ -97,13 +97,13 @@
 			<p class="top">
 				图文详情
 			</p>
-			<img src="static/detail/pic_031.jpg"/>
-			<img src="static/detail/pic_032.jpg"/>
-			<img src="static/detail/pic_033.jpg"/>
-			<img src="static/detail/pic_034.jpg"/>
-			<img src="static/detail/pic_035.jpg"/>
-			<img src="static/detail/pic_036.jpg"/>
-			<img src="static/detail/pic_037.jpg"/>
+			<img src="../../assets/detail/pic_031.jpg"/>
+			<img src="../../assets/detail/pic_032.jpg"/>
+			<img src="../../assets/detail/pic_033.jpg"/>
+			<img src="../../assets/detail/pic_034.jpg"/>
+			<img src="../../assets/detail/pic_035.jpg"/>
+			<img src="../../assets/detail/pic_036.jpg"/>
+			<img src="../../assets/detail/pic_037.jpg"/>
 		</div>
 	</div>
 	<div id="foot">
@@ -315,27 +315,26 @@ export default {
 		text-align: center;
 	}
 	.one,.two{
-		width: 1.5rem;
+		width: 1rem;
 		height: 1rem;
 		font-size: 10px;
 		background: url(../../assets/detail/pic_056.png) no-repeat center 0.1rem #fff;
 		background-size: 0.5rem;
 		padding-top: 0.5rem;
-		text-align: center;
 	}
 	.two{
 		background: url(../../assets/detail/pic_057.png) no-repeat center 0.1rem #fff;
 		background-size: 0.5rem;
 	}
 	.three{
-		width: 3.5rem;
+		width: 4rem;
 		height: 1rem;
 		background: #FFBC00;
 		line-height: 1rem;
 		color: #fff;
 	}
 	.four{
-		width: 3.5rem;
+		width: 4rem;
 		height: 1rem;
 		background: #FF3300;
 		line-height: 1rem;

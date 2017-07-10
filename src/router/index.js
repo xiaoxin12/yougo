@@ -6,7 +6,6 @@ import Lists from '@/components/Lists'
 import Dingdan from '@/components/Dingdan'
 import Wode from '@/components/Wode'
 import Detail from '@/components/childpage/Detail'
-import Myorder from '@/components/childpage/myOrder/myOrder_head.vue'
 
 Vue.use(Router)
 
@@ -41,12 +40,6 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
-    },
-    // 以下内容纯属测试用
-    {
-      path: '/myorder',
-      name: 'Myorder',
-      component: Myorder
     }
   ]
 })

@@ -5,8 +5,8 @@
 	</div>
 	<div id="con">
 		<div class="top">
-			<img src="static/share/pic_001.jpg" class="beijing"/>
-			<img class="userImg" src="static/share/pic_002.png"/>
+			<img src="../assets/share/pic_001.jpg" class="beijing"/>
+			<img class="userImg" src="../assets/share/pic_002.png"/>
 			<p class="tipsL">您好，请<router-link to="/wode">登录</router-link></p>
 			<p class="tipsL1">红包分享给好友使用就能获得<span>2%</span>红利</p>
 		</div>
@@ -26,13 +26,13 @@
 		<p class="jiaoni">小编:教你玩赚分享购</p>
 		<div class="fxg">
 			<div class="one">
-				<img src="static/share/pic_005.jpg"/><img src="static/share/pic_007.jpg" class="img2"/>
+				<img src="../assets/share/pic_005.jpg"/><img src="../assets/share/pic_007.jpg" class="img2"/>
 			</div>
 			<div class="two"></div>
 			<div class="three"></div>
 		</div>
 		<p class="jiaoni">内容值得分享</p>
-		<img src="static/share/pic_010.jpg" class="datu"/>
+		<img src="../assets/share/pic_010.jpg" class="datu"/>
 		<div class="f_1">
 			<p class="p1">我当是感情深了，原来是一口闷了</p>
 			<p class="p2">住在那个小区，有人养大公鸡，嗓音嘹亮...</p>

@@ -10,6 +10,7 @@ const state = {
   count: 0,
   list: ['a','b','c'],
   lists_container:true,
+  search:[]
 }
 
 // mutations are operations that actually mutates the state.
@@ -23,6 +24,12 @@ const mutations = {
   },
   listCon (state,{lists_container}){
   	state.lists_container = lists_container;
+  },
+  searchData (state,{search_Info}){
+  	state.search.push(search_Info)
+  },
+  reset (state,{resetInfo}){
+  	state.search=[]
   }
 }
 
