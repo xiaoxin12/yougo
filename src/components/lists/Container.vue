@@ -8,7 +8,7 @@
 		</ul>
 		<div class="nvxie"  v-if="selectItem == 0">
 			<div class="top_pic">
-				<img src="../../assets/lists/nvxie/1499061169454.jpg" alt="" />
+				<img src="static/lists/nvxie/1499061169454.jpg" alt="" />
 			</div>
 			<div class="title">
 				<a href="">
@@ -19,56 +19,56 @@
 				<ul>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
 							<!--<img src="https://heweijie.me/img/img (32).jpg" alt="" />-->
 							<p>百丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210037675.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
 							<p>天美意</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210051044.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
 							<p>他他</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210065265.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
 							<p>拔佳</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210079180.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
 							<p>思加图</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>百思图</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210113052.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
 							<p>森达</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210133902.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
 							<p>妙丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1473813826304.jpg" alt="" />
+							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
 							<p>全部品牌</p>
 						</a>
 					</li>
@@ -83,55 +83,55 @@
 				<ul>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>小白鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210037675.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
 							<p>乐福鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210051044.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
 							<p>休闲鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210065265.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
 							<p>松糕鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210079180.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
 							<p>内增高</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210024516.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
 							<p>帆布鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210113052.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
 							<p>运动鞋</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1487210133902.jpg" alt="" />
+							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
 							<p>妙丽</p>
 						</a>
 					</li>
 					<li>
 						<a href="">
-							<img src="../../assets/lists/nvxie/1473813826304.jpg" alt="" />
+							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
 							<p>全部品牌</p>
 						</a>
 					</li>

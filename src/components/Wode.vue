@@ -16,9 +16,9 @@
 			
 			<p class="otherL">---------选择其他方式登录---------</p>
 			<div class="l_o">
-				<img src="../assets/car/QQ.png"/>
-				<img src="../assets/car/pay.png"/>
-				<img src="../assets/car/sina.png"/>
+				<img src="static/car/QQ.png"/>
+				<img src="static/car/pay.png"/>
+				<img src="static/car/sina.png"/>
 			</div>
 			<div class="ff">
 				<span>正品保障</span>
@@ -106,6 +106,7 @@ export default {
     }
   },
   mounted: function () {
+  	console.log($.cookie('username'));
   	if($.cookie('username')==='null' || $.cookie('username')==='undefined'){
   		this.testL = false;
   	}else{

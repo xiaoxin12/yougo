@@ -3,27 +3,27 @@
 	<div id="header">
 		<div class="listPage" v-show="$store.state.lists_container">
 			<div class="arrow">
-				<a href="/"><img src="../../assets/lists/nvxie/new-back.png"></img></a>
+				<a href="/"><img src="static/lists/nvxie/new-back.png"></img></a>
 			</div>
 			<div class="search">
 				<form action="" >
 					<input type="text" placeholder="请输入关键字" @click="showCon()"/>
 				</form>
-				<a href=""> <img src="../../assets/lists/nvxie/ygseach.png" alt="" /></a>
+				<a href=""> <img src="static/lists/nvxie/ygseach.png" alt="" /></a>
 			</div>
 			<div class="menu"> 
-				<img src="../../assets/lists/nvxie/ico-menu.png" alt="" />
+				<img src="static/lists/nvxie/ico-menu.png" alt="" />
 			</div>
 		</div>
 		<div class="searchPage"  v-show="!$store.state.lists_container">
 			<div class="arrow">
-			    <img @click="showCon()" src="../../assets/lists/search/ico-close.png"></img>
+			    <img @click="showCon()" src="static/lists/search/ico-close.png"></img>
 			</div>
 			<div class="search">
 				<form action="" >
 					<input type="text" placeholder="请输入关键字" />
 				</form>
-				<a href=""> <img src="../../assets/lists/nvxie/ygseach.png" alt="" /></a>
+				<a href=""> <img src="static/lists/nvxie/ygseach.png" alt="" /></a>
 			</div>
 		</div>
 	</div>

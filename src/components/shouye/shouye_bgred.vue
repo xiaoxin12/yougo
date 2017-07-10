@@ -4,52 +4,52 @@
 
           <li class="tejia">
             <a href="">
-              <img src="../../../src/assets/image/index/xxtejia (1).jpg" alt="">
+              <img src="static/image/index/xxtejia (1).jpg" alt="">
             </a>
           </li>
           <li class="tejia">
             <a href="">
-              <img src="../../../src/assets/image/index/xxtejia (2).jpg" alt="">
+              <img src="static/image/index/xxtejia (2).jpg" alt="">
             </a>
           </li>
           <li class="tejia">
             <a href="">
-              <img src="../../../src/assets/image/index/xxtejia (3).jpg" alt="">
+              <img src="static/image/index/xxtejia (3).jpg" alt="">
             </a>
           </li>
           <li class="tejia">
             <a href="">
-              <img src="../../../src/assets/image/index/xxtejia (4).jpg" alt="">
+              <img src="static/image/index/xxtejia (4).jpg" alt="">
             </a>
           </li>
 
         </ul>
         <section class="price">
           <a href="">
-            <img class="prices" src="../../../src/assets/image/index/prices.jpg" alt="">
+            <img class="prices" src="static/image/index/prices.jpg" alt="">
           </a>
         </section>
           <ul class="dapaiindex">
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/dapaiindex_img (1).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (1).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/dapaiindex_img (2).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/dapaiindex_img (3).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (2).jpg" alt="">
               </a>
             </li>
 
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/dapaiindex_img (4).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (3).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (4).jpg" alt="">
               </a>
             </li>
 
@@ -58,24 +58,24 @@
           <ul class="dapaiindex">
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (1).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (1).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (2).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (3).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (2).jpg" alt="">
               </a>
             </li>
 
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (4).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (3).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (4).jpg" alt="">
               </a>
             </li>
 
@@ -83,52 +83,52 @@
           <ul class="dapaiindex">
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (5).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (5).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (6).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (7).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (6).jpg" alt="">
               </a>
             </li>
 
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_4img (8).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (7).jpg" alt="">
+              </a>
+            </li>
+
+            <li class="fl">
+              <a href="">
+                <img class="dapaiindex_img" src="static/image/index/list_4img (8).jpg" alt="">
               </a>
             </li>
 
           </ul>
         </section>
       <!--折是空白线-->
-      <img class="dapaiindex_img" src="../../../src/assets/image/index/line-margin.jpg" alt="">
+      <img class="dapaiindex_img" src="static/image/index/line-margin.jpg" alt="">
 
       <section>
           <ul class="list2">
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (1).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_2img (1).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (2).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_2img (2).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (3).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_2img (3).jpg" alt="">
               </a>
             </li>
             <li class="fl">
               <a href="">
-                <img class="dapaiindex_img" src="../../../src/assets/image/index/list_2img (4).jpg" alt="">
+                <img class="dapaiindex_img" src="static/image/index/list_2img (4).jpg" alt="">
               </a>
             </li>
           </ul>

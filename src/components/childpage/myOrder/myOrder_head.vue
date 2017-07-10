@@ -2,10 +2,10 @@
 	<div class="all Detail">
 		<div id="myOrder_head">		
 			<router-link to="/dingdan">
-				<img src="../../../assets/detail/new-back.png" class="return" />
+				<img src="static/detail/new-back.png" class="return" />
 			</router-link>
 			<span class="carH">我的订单</span>
-			<img src="../../../assets/detail/ico-menu.png" @click="showmenu()" class="menu" />
+			<img src="static/detail/ico-menu.png" @click="showmenu()" class="menu" />
 		</div>
 		<div id="con">
 			<div class="menu1" v-show="menu">

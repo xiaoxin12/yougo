@@ -3,32 +3,32 @@
       <mt-swipe :auto="4000">
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (1).jpg" alt="">
+            <img src="static/image/index/swiper (1).jpg" alt="">
           </a>
         </mt-swipe-item>
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (2).jpg" alt="">
+            <img src="static/image/index/swiper (2).jpg" alt="">
           </a>
         </mt-swipe-item>
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (3).jpg" alt="">
+            <img src="static/image/index/swiper (3).jpg" alt="">
           </a>
         </mt-swipe-item>
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (4).jpg" alt="">
+            <img src="static/image/index/swiper (4).jpg" alt="">
           </a>
         </mt-swipe-item>
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (5).jpg" alt="">
+            <img src="static/image/index/swiper (5).jpg" alt="">
           </a>
         </mt-swipe-item>
         <mt-swipe-item>
           <a href="#detail">
-            <img src="../../../src/assets/image/index/swiper (6).jpg" alt="">
+            <img src="static/image/index/swiper (6).jpg" alt="">
           </a>
         </mt-swipe-item>
 
