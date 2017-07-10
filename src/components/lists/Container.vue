@@ -12,127 +12,75 @@
 			</div>
 			<div class="title">
 				<a href="">
-					<p>热门品牌</p>
+					<p>{{product_1[0].list_class_1}}</p>
 				</a>
 			</div>
 			<div class="ulW">
 				<ul>
-					<li>
+					<li v-for="item in product_1">
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
-							<!--<img src="https://heweijie.me/img/img (32).jpg" alt="" />-->
-							<p>百丽</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
-							<p>天美意</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
-							<p>他他</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
-							<p>拔佳</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
-							<p>思加图</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
-							<p>百思图</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
-							<p>森达</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
-							<p>妙丽</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
-							<p>全部品牌</p>
+							<img v-bind:src="item.list_src" alt="" />
+							<p>{{item.list_dir}}</p>
 						</a>
 					</li>
 				</ul>
 			</div>
 			<div class="title">
 				<a href="">
-					<p>极简实穿</p>
+					<p>{{product_2[0].list_class_1}}</p>
 				</a>
 			</div>
 			<div class="ulW">
 				<ul>
-					<li>
+					<li v-for="item in product_2">
 						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
-							<p>小白鞋</p>
+							<img v-bind:src="item.list_src" alt="" />
+							<p>{{item.list_dir}}</p>
 						</a>
 					</li>
-					<li>
+				</ul>
+			</div>
+			<div class="title">
+				<a href="">
+					<p>{{product_3[0].list_class_1}}</p>
+				</a>
+			</div>
+			<div class="ulW">
+				<ul>
+					<li v-for="item in product_3">
 						<a href="">
-							<img src="static/lists/nvxie/1487210037675.jpg" alt="" />
-							<p>乐福鞋</p>
+							<img v-bind:src="item.list_src" alt="" />
+							<p>{{item.list_dir}}</p>
 						</a>
 					</li>
-					<li>
+				</ul>
+			</div>
+			<div class="title">
+				<a href="">
+					<p>{{product_4[0].list_class_1}}</p>
+				</a>
+			</div>
+			<div class="ulW">
+				<ul>
+					<li v-for="item in product_4">
 						<a href="">
-							<img src="static/lists/nvxie/1487210051044.jpg" alt="" />
-							<p>休闲鞋</p>
+							<img v-bind:src="item.list_src" alt="" />
+							<p>{{item.list_dir}}</p>
 						</a>
 					</li>
-					<li>
+				</ul>
+			</div>
+			<div class="title">
+				<a href="">
+					<p>{{product_5[0].list_class_1}}</p>
+				</a>
+			</div>
+			<div class="ulW">
+				<ul>
+					<li v-for="item in product_5">
 						<a href="">
-							<img src="static/lists/nvxie/1487210065265.jpg" alt="" />
-							<p>松糕鞋</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210079180.jpg" alt="" />
-							<p>内增高</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210024516.jpg" alt="" />
-							<p>帆布鞋</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210113052.jpg" alt="" />
-							<p>运动鞋</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1487210133902.jpg" alt="" />
-							<p>妙丽</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="static/lists/nvxie/1473813826304.jpg" alt="" />
-							<p>全部品牌</p>
+							<img v-bind:src="item.list_src" alt="" />
+							<p>{{item.list_dir}}</p>
 						</a>
 					</li>
 				</ul>
@@ -208,11 +156,22 @@
 	    	selectItem:0,
 	    	type:"nvxie",
 	    	isnvxie:"ture",
-	    	productList:[]
+	    	productList:[],
+	    	product_1:[],
+	    	product_2:[],
+	    	product_3:[],
+	    	product_4:[],
+			product_5:[]
 	    }
 	  },
+	  created:function(){
+	  	this.listData();
+	  },
+	  beforeMount:function(){
+	  
+	  },
 	   mounted:function() {
-	   	this.readyss()
+	   	this.readyss();
 	   },
 	  methods: {
 		  	getTabDetail(index){
@@ -223,6 +182,38 @@
 			    this.$http.get('/data/lists.json')
 		        .then(function(res){
 		        	this.productList = res.data
+		   	 		})
+	       },
+	       listData: function() {
+			    this.$http.get('/api/lis/select?list_class=nvxie&list_class_1=热门品牌')
+		        .then(function(res){
+		        	console.log(res)
+		        	this.product_1= res.data
+		        	console.log(this.product_1)
+		   	 		});
+		         this.$http.get('/api/lis/select?list_class=nvxie&list_class_1=极简实穿')
+		        .then(function(res){
+		        	console.log(res)
+		        	this.product_2 = res.data
+		        	console.log(this.product_2)
+		   	 		});
+		          this.$http.get('/api/lis/select?list_class=nvxie&list_class_1=女士单鞋')
+		        .then(function(res){
+		        	console.log(res)
+		        	this.product_3 = res.data
+		        	console.log(this.product_3)
+		   	 		});
+		          this.$http.get('/api/lis/select?list_class=nvxie&list_class_1=女士靴子')
+		        .then(function(res){
+		        	console.log(res)
+		        	this.product_4 = res.data
+		        	console.log(this.product_4)
+		   	 		})
+		          this.$http.get('/api/lis/select?list_class=nvxie&list_class_1=女士凉鞋')
+		        .then(function(res){
+		        	console.log(res)
+		        	this.product_5 = res.data
+		        	console.log(this.product_5)
 		   	 		})
 	       },
 		  	...mapActions([
@@ -256,8 +247,9 @@
 			float:left;
 			position:fixed;
 			li{
-				flex: 1;
-				padding: pr(40.5px) 0;
+			
+				line-height: 1.35rem;
+				height: 1.35rem;
 			    font-size: 14px;
 			    text-align: center;
 			    border-right: 1px solid #ddd;
@@ -287,8 +279,8 @@
 					text-align: center;
 				a{
 					display: inline-block;
-					height: pr(160px);
-				    line-height: pr(160px);
+					height: pr(120px);
+				    line-height: pr(120px);
 				    font-size: 18px;
 				    color: #333;
 				    padding: 0 pr(20px);

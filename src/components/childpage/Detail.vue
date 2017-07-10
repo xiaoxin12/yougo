@@ -13,38 +13,35 @@
 		</div>
 		<mt-swipe :auto="0" class="swiper">
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_001.jpg" class="lunbo" />
+		  	<img :src="swipe1" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_002.jpg" class="lunbo" />
+		  	<img :src="swipe2" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_003.jpg" class="lunbo" />
+		  	<img :src="swipe3" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_004.jpg" class="lunbo" />
+		  	<img :src="swipe4" class="lunbo" />
 		  </mt-swipe-item>
 		  <mt-swipe-item>
-		  	<img src="static/detail/pic_005.jpg" class="lunbo" />
-		  </mt-swipe-item>
-		  <mt-swipe-item>
-		  	<img src="static/detail/pic_006.jpg" class="lunbo" />
+		  	<img :src="swipe5" class="lunbo" />
 		  </mt-swipe-item>
 		</mt-swipe>
 		<div class="name">
-			<p class="name_p l">adidas阿迪三叶草2017年新款中性三叶草系列休闲鞋BY3715</p>
+			<p class="name_p l">{{pro_name}}</p>
 			<p class="r">分享</p>
 		</div>
 		<p class="price">
-			<span class="s1">￥679</span>
-			<span class="s2">￥769</span>
+			<span class="s1">{{price}}</span>
+			<span class="s2">{{price1}}</span>
 			<span class="r">可用优惠券</span>
 		</p>
 		<p class="ytime">
-			限时优惠： 3天，亲们快来抢购吧
+			{{miaoshu}}
 		</p>
 		<p class="chima">
-			选择：颜色/尺码
+			{{chicun}}
 			<img src="static/detail/open.png" class="r"/>
 		</p>
 		<p class="chima">
@@ -63,47 +60,45 @@
 		</p>
 		<div class="pro_o">
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 			<div class="pro_list">
-				<img src="static/detail/pic_039.jpg"/>
-				<p class="pro_name">阿迪达斯运动鞋</p>
-				<p class="pro_price">￥355</p>
+				<img :src="more_pic"/>
+				<p class="pro_name">{{more_pro_name}}</p>
+				<p class="pro_price">{{more_price}}</p>
 			</div>
 		</div>
 		<div class="imgo">
 			<p class="top">
 				图文详情
 			</p>
-			<img src="static/detail/pic_031.jpg"/>
-			<img src="static/detail/pic_032.jpg"/>
-			<img src="static/detail/pic_033.jpg"/>
-			<img src="static/detail/pic_034.jpg"/>
-			<img src="static/detail/pic_035.jpg"/>
-			<img src="static/detail/pic_036.jpg"/>
-			<img src="static/detail/pic_037.jpg"/>
+			<img :src="swipe1"/>
+			<img :src="swipe2"/>
+			<img :src="swipe3"/>
+			<img :src="swipe4"/>
+			<img :src="swipe5"/>
 		</div>
 	</div>
 	<div id="foot">
@@ -127,8 +122,43 @@ export default {
   },
   data () {
     return {
-    	menu: false
+    	menu: false,
+    	swipe1: "",
+    	swipe2: "",
+    	swipe3: "",
+    	swipe4: "",
+    	swipe5: "",
+    	pro_name: "",
+    	price: "",
+    	price1: "",
+    	chicun: "",
+    	miaoshu: "",
+    	more_pro_name: "",
+    	more_pic: "",
+    	more_price: ""
     }
+  },
+  mounted: function () {
+      this.$http.post('/api/det/select', {
+        id: '5'
+      }).then(function(data){
+      	this.swipe1 = data.body.swipe1;
+      	this.swipe2 = data.body.swipe2;
+      	this.swipe3 = data.body.swipe3;
+      	this.swipe4 = data.body.swipe4;
+      	this.swipe5 = data.body.swipe5;
+      	this.pro_name = data.body.pro_name;
+      	this.price = data.body.price;
+      	this.price1 = data.body.price1;
+      	this.chicun = data.body.chicun;
+      	this.miaoshu = data.body.miaoshu;
+      	this.more_pro_name = data.body.more_pro_name;
+      	this.more_pic = data.body.more_pic;
+      	this.more_price = data.body.more_price;
+        }, response => {
+          // error callback
+          console.log("error");
+        });
   },
   methods: {
   	showmenu: function(){
@@ -187,6 +217,7 @@ export default {
 		text-align: center;
 		img{
 			height: 100%;
+			width: 8rem;
 		}
 	}
 	.name{
@@ -280,6 +311,10 @@ export default {
 				height: 0.7rem;
 				line-height: 0.7rem;
 				font-size: 14px;
+				width: 2.7rem;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 			}
 			.pro_price{
 				height: 0.7rem;
