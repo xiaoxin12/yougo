@@ -172,7 +172,7 @@
   #shouye_bgred{
     width:100%;
     height:15rem;
-    background:red;
+    // background:red;
     .xie_xue_fj_list{
       height:3rem;
       width:100%;
