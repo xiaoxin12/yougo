@@ -315,26 +315,27 @@ export default {
 		text-align: center;
 	}
 	.one,.two{
-		width: 1rem;
+		width: 1.5rem;
 		height: 1rem;
 		font-size: 10px;
 		background: url(../../assets/detail/pic_056.png) no-repeat center 0.1rem #fff;
 		background-size: 0.5rem;
 		padding-top: 0.5rem;
+		text-align: center;
 	}
 	.two{
 		background: url(../../assets/detail/pic_057.png) no-repeat center 0.1rem #fff;
 		background-size: 0.5rem;
 	}
 	.three{
-		width: 4rem;
+		width: 3.5rem;
 		height: 1rem;
 		background: #FFBC00;
 		line-height: 1rem;
 		color: #fff;
 	}
 	.four{
-		width: 4rem;
+		width: 3.5rem;
 		height: 1rem;
 		background: #FF3300;
 		line-height: 1rem;
