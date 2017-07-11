@@ -140,7 +140,7 @@ export default {
   },
   mounted: function () {
       this.$http.post('/api/det/select', {
-        id: '5'
+        id: '2'
       }).then(function(data){
       	this.swipe1 = data.body.swipe1;
       	this.swipe2 = data.body.swipe2;
