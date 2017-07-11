@@ -6,5 +6,11 @@ export const actions = {
 	},
 	listCon: ({ commit }, { lists_container }) => {
 		commit('listCon',{ lists_container:lists_container })
+	},
+	searchData: ({ commit }, { search_Info }) => {
+		commit('searchData',{ search_Info:search_Info })
+	},
+	reset: ({ commit }, { resetInfo }) => {
+		commit('reset',{ resetInfo:resetInfo })
 	}
 }
