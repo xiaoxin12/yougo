@@ -7,7 +7,7 @@
 		<div class="top">
 			<img src="static/share/pic_001.jpg" class="beijing"/>
 			<img class="userImg" src="static/share/pic_002.png"/>
-			<p class="tipsL">您好，请<router-link to="/wode">登录</router-link></p>
+			<p class="tipsL">您好，<router-link to="/wode">{{username}}</router-link></p>
 			<p class="tipsL1">红包分享给好友使用就能获得<span>2%</span>红利</p>
 		</div>
 		<div class="quan">
@@ -59,8 +59,16 @@ export default {
   },
   data () {
     return {
-    	
+    	username: ""
     }
+  },
+  mounted: function () {
+  	console.log($.cookie('username'));
+  	if($.cookie('username')==='null' || $.cookie('username')===undefined){
+  		this.username = '请登录';
+  	}else{
+  		this.username = $.cookie('username');
+  	}
   }
 }
 </script>

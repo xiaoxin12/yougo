@@ -126,7 +126,7 @@ export default {
   	login: function() {
   	  var that = this;
   	  that.loading = "正在登录，请稍候";
-      this.$http.post('http://10.2.153.179/thinkphp/public/api/users/login', {
+      this.$http.post('/api/users/login', {
         name: this.name,
         pw: this.pw
       }).then(function(data){
