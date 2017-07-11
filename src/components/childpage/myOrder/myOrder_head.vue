@@ -163,7 +163,7 @@
 				<p>仅显示六个月内的消息</p>
 				<p>历史信息请到电脑端查看</p>
 			</div>
-			<!--<Testajax></Testajax>-->
+			
 		</div>
 		
 		
@@ -173,7 +173,7 @@
 <script>
 import { Navbar, Cell,TabItem , TabContainer, TabContainerItem} from 'mint-ui';
 import Vue from 'vue';
-import Testajax from './testajax.vue';
+
 import { mapGetters, mapActions } from 'vuex'
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
@@ -183,7 +183,7 @@ Vue.component(TabContainerItem.name, TabContainerItem);
 export default {
   name: 'myOrder_head',
   components: {
-	Testajax
+	
   },
   data () {
     return {
