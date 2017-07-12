@@ -1,5 +1,4 @@
 <template>
-	
 	<div id="header">
 		<div class="listPage" v-show="$store.state.lists_container">
 			<div class="arrow">
@@ -47,7 +46,7 @@
 		        this.$http.jsonp('https://sug.so.360.cn/suggest?word=' + this.search + '&encodein=utf-8&encodeout=utf-8')
 		        .then(function(res){
 		       this.t1 = JSON.parse(res.bodyText).s
-		       console.log(this.t1)
+		    
 		      },function(error){
 		      	console.log(error)
 		      });
