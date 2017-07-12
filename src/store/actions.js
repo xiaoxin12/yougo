@@ -7,6 +7,12 @@ export const actions = {
 	listCon: ({ commit }, { lists_container }) => {
 		commit('listCon',{ lists_container:lists_container })
 	},
+
+	updateflag: ({ commit }, { flag}) => {
+		commit('updateflag',{ flag:flag })
+		
+	},
+
 	searchData: ({ commit }, { search_Info }) => {
 		commit('searchData',{ search_Info:search_Info })
 	},
@@ -16,4 +22,5 @@ export const actions = {
 	hrefVal: ({ commit }, { hrefVal }) => {
 		commit('hrefVal',{ hrefVal:hrefVal })
 	}
+
 }

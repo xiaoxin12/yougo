@@ -1,134 +1,34 @@
 <template>
     <div id="shouye_bgred">
-        <ul class="xie_xue_fj_list">
+        <ul class="xie_xue_fj_list" >
 
-          <li class="tejia">
-            <a href="">
-              <img src="static/image/index/xxtejia (1).jpg" alt="">
+          <li class="tejia"  v-for="item  in tejia ">
+            <a :href="item.dir">
+              <img v-bind:src="item.img_src" alt="">
             </a>
           </li>
-          <li class="tejia">
-            <a href="">
-              <img src="static/image/index/xxtejia (2).jpg" alt="">
-            </a>
-          </li>
-          <li class="tejia">
-            <a href="">
-              <img src="static/image/index/xxtejia (3).jpg" alt="">
-            </a>
-          </li>
-          <li class="tejia">
-            <a href="">
-              <img src="static/image/index/xxtejia (4).jpg" alt="">
-            </a>
-          </li>
-
         </ul>
-        <section class="price">
-          <a href="">
-            <img class="prices" src="static/image/index/prices.jpg" alt="">
+        <section class="price"  v-for="item  in price ">
+          <a :href="item.dir">
+            <img class="prices" v-bind:src="item.img_src" alt="">
           </a>
         </section>
           <ul class="dapaiindex">
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (1).jpg" alt="">
+            <li class="fl" v-for="item  in dapaiindex ">
+              <a :href="item.dir">
+                <img class="dapaiindex_img"  v-bind:src="item.img_src" alt="">
               </a>
             </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (2).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (3).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/dapaiindex_img (4).jpg" alt="">
-              </a>
-            </li>
-
           </ul>
-        <section class="listimg4">
-          <ul class="dapaiindex">
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (1).jpg" alt="">
-              </a>
-            </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (2).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (3).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (4).jpg" alt="">
-              </a>
-            </li>
-
-          </ul>
-          <ul class="dapaiindex">
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (5).jpg" alt="">
-              </a>
-            </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (6).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (7).jpg" alt="">
-              </a>
-            </li>
-
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_4img (8).jpg" alt="">
-              </a>
-            </li>
-
-          </ul>
-        </section>
+        
       <!--折是空白线-->
       <img class="dapaiindex_img" src="static/image/index/line-margin.jpg" alt="">
 
       <section>
           <ul class="list2">
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_2img (1).jpg" alt="">
-              </a>
-            </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_2img (2).jpg" alt="">
-              </a>
-            </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_2img (3).jpg" alt="">
-              </a>
-            </li>
-            <li class="fl">
-              <a href="">
-                <img class="dapaiindex_img" src="static/image/index/list_2img (4).jpg" alt="">
+            <li class="fl" v-for="item  in list2_cnic ">
+              <a :href="item.dir">
+                <img class="dapaiindex_img" v-bind:src="item.img_src" alt="">
               </a>
             </li>
           </ul>
@@ -136,20 +36,59 @@
     </div>
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex'
+	
   export default {
     name: 'Shouye_bgred',
     components: {
 
     },
-    data () {
+     data () {
       return {
-
+		product:[],
+		tejia:[],
+		price:[],
+		dapaiindex:[],
+		list2_cnic:[]
       }
     },
+    mounted(){
+	  	this.ajaxfun()
+	},
     methods: {
-      handleChange(index) {
-//      ...
-      }
+      	 ...mapActions([
+		    'savedata',
+		    'updateflag'
+		  ]
+	    ),
+    	ajaxfun: function () {
+		this.updateflag(true);
+			//ajax
+		 this.$http.get('/api/shouy/find?class=price&class=tejia').then(res => {
+//		    console.log(JSON.parser(res));
+//		    console.log(res.body);
+			for(var i = 0;i<eval(res.body).length;i++){
+//				console.log(res.body[i].class)
+				if(res.body[i].class=="tejia"){
+					this.tejia.push(eval(res.body)[i]);
+//					console.log(res.body[i].class);
+				};
+				if(res.body[i].class=="price"){
+					this.price.push(eval(res.body)[i]);					
+				};
+				if(res.body[i].class=="dapaiindex"){
+					this.dapaiindex.push(eval(res.body)[i]);					
+				};
+				if(res.body[i].class=="list2"){
+					this.list2_cnic.push(eval(res.body)[i]);					
+				};
+			}
+		  }, response => {
+		    // error callback
+		  });
+    	
+    	}
+      
     }
   }
 </script>

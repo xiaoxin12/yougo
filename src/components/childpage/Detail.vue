@@ -1,5 +1,5 @@
 <template>
-<div class="all Detail">
+<div class="all">
 	<div id="header">
 		<router-link to="/dingdan"><img src="static/detail/new-back.png" class="return" /></router-link><span class="carH">商品详情</span>
 		<img src="static/detail/ico-menu.png" @click="showmenu()" class="menu" />
@@ -107,10 +107,29 @@
 		<span class="three l">加入购物车</span>
 		<span class="four l">立即购买</span>
 	</div>
+	<div class="car" v-show="car">
+		<div class="car_hea">
+			<img :src="swipe1"/>
+		</div>
+		<div class="car_con">
+			<div class="chose_color">
+				
+			</div>
+			<div class="chose_chima">
+				
+			</div>
+		</div>
+		<div class="car_foot">
+			<span class="one l">收藏</span>
+			<router-link to="/dingdan" class="two l">购物车</router-link>
+			<span class="ok">确认</span>
+		</div>
+	</div>
 </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import { Swipe, SwipeItem } from 'mint-ui';
 import Vue from 'vue'
 Vue.component(Swipe.name, Swipe);
@@ -135,12 +154,13 @@ export default {
     	miaoshu: "",
     	more_pro_name: "",
     	more_pic: "",
-    	more_price: ""
+    	more_price: "",
+    	car: false
     }
   },
   mounted: function () {
       this.$http.post('/api/det/select', {
-        id: '5'
+        id: this.$store.state.hrefVal
       }).then(function(data){
       	this.swipe1 = data.body.swipe1;
       	this.swipe2 = data.body.swipe2;
@@ -170,6 +190,69 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.car{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10rem;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+	overflow: hidden;
+	.car_hea{
+		height: 3rem;
+		width: 100%;
+		position: absolute;
+		bottom: 9.2rem;
+		background: #fff;
+		border-bottom: 1px solid #ccc;
+		img{
+			position: absolute;
+			width: 4rem;
+			height: 4rem;
+			top: -2rem;
+			left: 1rem;
+			border: 1px solid #ccc;
+		}
+	}
+	.car_con{
+		height: 8rem;
+		width: 100%;
+		position: absolute;
+		bottom: 1.2rem;
+		background: #fff;
+	}
+	.car_foot{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height:1.2rem;
+		background: #fff;
+		span{
+			display: inline-block;
+			text-align: center;
+		}
+		.one,.two{
+			width: 2rem;
+			height: 1rem;
+			font-size: 10px;
+			background: url(../../assets/detail/pic_056.png) no-repeat center 0.1rem #fff;
+			background-size: 0.5rem;
+			padding-top: 0.5rem;
+			text-align: center;
+		}
+		.two{
+			background: url(../../assets/detail/pic_057.png) no-repeat center 0.1rem #fff;
+			background-size: 0.5rem;
+		}
+		.ok{
+			width: 6rem;
+			height: 1rem;
+			background: #FF3300;
+			line-height: 1rem;
+			color: #fff;
+		}
+	}
+}
 #header{
 	height: 1rem;
 	line-height: 1rem;
@@ -344,7 +427,6 @@ export default {
 }
 #foot{
 	height: 1rem;
-	overflow: hidden;
 	span{
 		display: inline-block;
 		text-align: center;

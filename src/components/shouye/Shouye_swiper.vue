@@ -1,37 +1,11 @@
 <template>
     <div id="shouye_swiper">
       <mt-swipe :auto="4000">
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (1).jpg" alt="">
+        <mt-swipe-item  v-for="item  in product ">
+          <a v-bind:href="item.dir">
+            <img v-bind:src="item.img_src" alt="">
           </a>
         </mt-swipe-item>
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (2).jpg" alt="">
-          </a>
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (3).jpg" alt="">
-          </a>
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (4).jpg" alt="">
-          </a>
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (5).jpg" alt="">
-          </a>
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <a href="#detail">
-            <img src="static/image/index/swiper (6).jpg" alt="">
-          </a>
-        </mt-swipe-item>
-
       </mt-swipe>
 
     </div>
@@ -39,6 +13,7 @@
 
 <script>
   import { Swipe, SwipeItem } from 'mint-ui';
+import { mapGetters, mapActions } from 'vuex'
   import Vue from 'vue'
   Vue.component(Swipe.name, Swipe);
   Vue.component(SwipeItem.name, SwipeItem);
@@ -49,13 +24,37 @@
     },
     data () {
       return {
-
+		product:[]
       }
     },
+    mounted(){
+	  	this.ajaxfun()
+	},
     methods: {
-      handleChange(index) {
-//      ...
-      }
+      	 ...mapActions([
+		    'savedata',
+		    'updateflag'
+		  ]
+	    ),
+    	ajaxfun: function () {
+		this.updateflag(true);
+			//ajax
+		 this.$http.get('/api/shouy/find?class=swiper').then(res => {
+//		    console.log(JSON.parser(res));
+//		    console.log(res.body);
+			for(var i = 0;i<eval(res.body).length;i++){
+				if(res.body[i].class=="swiper"){
+					this.product .push(eval(res.body)[i]);
+//					console.log(res.body[i].class);
+				}
+
+			}
+		  }, response => {
+		    // error callback
+		  });
+    	
+    	}
+      
     }
   }
 </script>
