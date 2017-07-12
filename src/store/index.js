@@ -10,7 +10,8 @@ const state = {
   count: 0,
   list: ['a','b','c'],
   lists_container:true,
-  search:[]
+  search:[],
+  hrefVal:""
 }
 
 // mutations are operations that actually mutates the state.
@@ -30,6 +31,9 @@ const mutations = {
   },
   reset (state,{resetInfo}){
     state.search=[]
+  },
+   hrefVal (state,{hrefVal}){
+    state.hrefVal=hrefVal
   }
 }
 
