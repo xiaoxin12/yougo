@@ -161,7 +161,7 @@ export default {
     	more_pro_name: "",
     	more_pic: "",
     	more_price: "",
-    	car: true,
+    	car: false,
     	color: "请选择颜色",
     	chima: "尺码",
     	more_color: [],
