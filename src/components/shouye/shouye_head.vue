@@ -20,7 +20,28 @@
 
       }
     },
+    mounted(){
+      this.scrolltop()
+    },
     methods :{
+      scrolltop: function (){
+        // console.log()
+        $("#con").scroll(function(evt){
+         var height = $('#con').scrollTop();
+         // console.log(height);
+          if(height>100){
+            $("#header").css({
+              "background":"red"
+              // "opacity":"1"
+            })
+          }else{
+            $("#header").css({
+              "background":"rgba(255,255,200,0.2)"
+              // "opacity":"1"
+            })
+          }
+        })
+      }
 
     }
   }
@@ -44,7 +65,7 @@
     padding:0 5px;
     height: 1.1rem;
     /*line-height: 1.1rem;*/
-    background: rgba(255,255,200,.1);
+    // background: red;
     position: fixed;
     text-align: center;
     overflow: hidden;

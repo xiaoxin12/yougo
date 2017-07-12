@@ -22,6 +22,7 @@ export const actions = {
 	hrefVal: ({ commit }, { hrefVal }) => {
 		commit('hrefVal',{ hrefVal:hrefVal })
 	}
+	
 
 
 }

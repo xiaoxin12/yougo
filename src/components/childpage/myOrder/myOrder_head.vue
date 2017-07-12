@@ -135,7 +135,7 @@
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
-									<a href="">
+									<a href="#">
 										<img src="http://i2.ygimg.cn/pics/converse/2016/100368752/100368752_01_m.jpg?4">
 									</a>
 								</span>
@@ -269,6 +269,7 @@ ul,ol{
 }
 #con{
 	background: #f5f5f5;
+	color: #999;
 	.menu1{
 		height: 1rem;
 		line-height: 1rem;
@@ -281,7 +282,7 @@ ul,ol{
 		}
 	}
 	.lists{
-		height:1rem;
+		// height:1rem;
 		line-height: 1rem;
 		font-size: 18px;
 		vertical-align: middle;
@@ -327,8 +328,10 @@ ul,ol{
 					img{
 						width: 2rem;
 						height: 2rem;
+						border:1px solid #ccc;
 					}
-					padding-right:1rem;
+					margin-right:1rem;
+
 				}
 			}
 		}
@@ -364,6 +367,9 @@ ul,ol{
 		p{
 			height: 0.5rem;
 		}
+	}
+	span{
+		color:#000;
 	}
 
 }

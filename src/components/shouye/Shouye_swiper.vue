@@ -1,8 +1,8 @@
 <template>
     <div id="shouye_swiper">
       <mt-swipe :auto="4000">
-        <mt-swipe-item  v-for="item  in product ">
-          <a v-bind:href="item.dir">
+        <mt-swipe-item  v-for="(item ,index) in product " :key="index">
+          <a v-bind:href="item.dir" >
             <img v-bind:src="item.img_src" alt=""   @click='changehref(item.hrefVal)'>
           </a>
         </mt-swipe-item>
