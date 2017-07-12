@@ -7,7 +7,8 @@ import Dingdan from '@/components/Dingdan'
 import Wode from '@/components/Wode'
 import Detail from '@/components/childpage/Detail'
 import Myorder from '@/components/childpage/myOrder/myOrder_head.vue'
-
+import Listpage from '@/components/lists/Listpage.vue'
+import Listpage1 from '@/components/lists/Listpage1.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -41,6 +42,16 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/listpage',
+      name: 'Listpage',
+      component: Listpage
+    },
+    {
+      path: '/listpage1',
+      name: 'Listpage1',
+      component: Listpage1
     },
     // 以下内容纯属测试用
     {

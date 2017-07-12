@@ -10,17 +10,11 @@ const state = {
   count: 0,
   list: ['a','b','c'],
   lists_container:true,
-<<<<<<< HEAD
   search:[],
-  hrefVal:""
-=======
-//<<<<<<< HEAD
+  hrefVal:"",
   wating:false,
-//=======
   search:[],
   hrefVal: "1"
-//>>>>>>> 233f7b6259eda9ed06b00a497134e6995dccb61d
->>>>>>> c70183729c0e2db4328cc4e3351f70b13095e90f
 }
 
 // mutations are operations that actually mutates the state.
@@ -46,14 +40,12 @@ const mutations = {
     state.search.push(search_Info)
   },
   reset (state,{resetInfo}){
-<<<<<<< HEAD
+
     state.search=[]
   },
    hrefVal (state,{hrefVal}){
     state.hrefVal=hrefVal
-=======
     state.search=[];
->>>>>>> c70183729c0e2db4328cc4e3351f70b13095e90f
   }
 }
 

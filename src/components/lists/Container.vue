@@ -11,14 +11,14 @@
 					<img src="static/lists/nvxie/1499061169454.jpg" alt="" />
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/listpage">
 						<p>热门品牌</p>
 					</a>
 				</div>
 				<div class="ulW">
 					<ul>
-						<li v-for="item in product_1">
-							<a href="">
+						<li v-for="(item,index) in product_1" >
+							<a href="#/listpage1">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -33,7 +33,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_2">
-							<a href="" @click="changehref()">
+							<a href="#/detail" @click="changehref(3)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -41,7 +41,7 @@
 					</ul>
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/detail" @click="changehref(3)">
 						<p>女士单鞋</p>
 					</a>
 				</div>
@@ -56,14 +56,14 @@
 					</ul>
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/detail" @click="changehref(3)">
 						<p>女士靴子</p>
 					</a>
 				</div>
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_4">
-							<a href="">
+							<a href="#/detail" @click="changehref(3)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -78,7 +78,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_5">
-							<a href="">
+							<a href="#/detail" @click="changehref(3)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -113,7 +113,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_7">
-							<a href="">
+							<a href="#/detail" @click="changehref(1)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -128,7 +128,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_8">
-							<a href="">
+							<a href="#/detail" @click="changehref(1)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -143,7 +143,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_9">
-							<a href="">
+							<a href="#/detail" @click="changehref(1)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -167,7 +167,7 @@
 					<img src="static/lists/huwai/pic (121).jpg" alt="" />
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/listpage">
 						<p>热门品牌</p>
 					</a>
 				</div>
@@ -189,7 +189,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_11">
-							<a href="">
+							<a href="#/detail" @click="changehref(1)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -204,7 +204,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_12">
-							<a href="">
+							<a href="#/detail" @click="changehref(2)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -219,7 +219,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_13">
-							<a href="">
+							<a href="#/detail" @click="changehref(7)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -334,7 +334,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_14">
-							<a href="">
+							<a href="#/detail" @click="changehref(8)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -605,7 +605,7 @@
 								}
 							}
 						}
-						console.log(res)
+						
 					})
 			},
 			...mapActions([
@@ -617,9 +617,9 @@
 					resetInfo: []
 				});
 			},
-			changehref:function() {
+			changehref(val) {
 				this.hrefVal({
-					hrefVal: 1
+					hrefVal: val
 				});
 			}
 
