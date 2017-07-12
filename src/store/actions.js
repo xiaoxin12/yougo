@@ -18,6 +18,10 @@ export const actions = {
 	},
 	reset: ({ commit }, { resetInfo }) => {
 		commit('reset',{ resetInfo:resetInfo })
+	},
+	hrefVal: ({ commit }, { hrefVal }) => {
+		commit('hrefVal',{ hrefVal:hrefVal })
 	}
+
 
 }

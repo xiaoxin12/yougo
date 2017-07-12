@@ -14,7 +14,7 @@ const state = {
   wating:false,
 //=======
   search:[],
-  hrefVal: "1"
+  hrefVal: "4"
 //>>>>>>> 233f7b6259eda9ed06b00a497134e6995dccb61d
 }
 
@@ -42,6 +42,9 @@ const mutations = {
   },
   reset (state,{resetInfo}){
     state.search=[];
+  },
+  hrefVal (state,{hrefVal}){
+    state.hrefVal=hrefVal;
   }
 }
 

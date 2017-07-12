@@ -1,22 +1,23 @@
 <template>
     <div id="shouye_bgred">
+
         <ul class="xie_xue_fj_list" >
 
           <li class="tejia"  v-for="item  in tejia ">
             <a :href="item.dir">
-              <img v-bind:src="item.img_src" alt="">
+              <img v-bind:src="item.img_src" alt=""  @click='changehref(item.hrefVal)'>
             </a>
           </li>
         </ul>
         <section class="price"  v-for="item  in price ">
           <a :href="item.dir">
-            <img class="prices" v-bind:src="item.img_src" alt="">
+            <img class="prices" v-bind:src="item.img_src" alt=""   @click='changehref(item.hrefVal)'>
           </a>
         </section>
           <ul class="dapaiindex">
             <li class="fl" v-for="item  in dapaiindex ">
               <a :href="item.dir">
-                <img class="dapaiindex_img"  v-bind:src="item.img_src" alt="">
+                <img class="dapaiindex_img"  v-bind:src="item.img_src" alt=""   @click='changehref(item.hrefVal)'>
               </a>
             </li>
           </ul>
@@ -28,7 +29,7 @@
           <ul class="list2">
             <li class="fl" v-for="item  in list2_cnic ">
               <a :href="item.dir">
-                <img class="dapaiindex_img" v-bind:src="item.img_src" alt="">
+                <img class="dapaiindex_img" v-bind:src="item.img_src" alt=""   @click='changehref(item.hrefVal)'>
               </a>
             </li>
           </ul>
@@ -45,11 +46,11 @@ import { mapGetters, mapActions } from 'vuex'
     },
      data () {
       return {
-		product:[],
-		tejia:[],
-		price:[],
-		dapaiindex:[],
-		list2_cnic:[]
+    		product:[],
+    		tejia:[],
+    		price:[],
+    		dapaiindex:[],
+    		list2_cnic:[],
       }
     },
     mounted(){
@@ -58,37 +59,42 @@ import { mapGetters, mapActions } from 'vuex'
     methods: {
       	 ...mapActions([
 		    'savedata',
-		    'updateflag'
+		    'updateflag',
+        'hrefVal'
 		  ]
 	    ),
     	ajaxfun: function () {
-		this.updateflag(true);
-			//ajax
-		 this.$http.get('/api/shouy/find?class=price&class=tejia').then(res => {
-//		    console.log(JSON.parser(res));
-//		    console.log(res.body);
-			for(var i = 0;i<eval(res.body).length;i++){
-//				console.log(res.body[i].class)
-				if(res.body[i].class=="tejia"){
-					this.tejia.push(eval(res.body)[i]);
-//					console.log(res.body[i].class);
-				};
-				if(res.body[i].class=="price"){
-					this.price.push(eval(res.body)[i]);					
-				};
-				if(res.body[i].class=="dapaiindex"){
-					this.dapaiindex.push(eval(res.body)[i]);					
-				};
-				if(res.body[i].class=="list2"){
-					this.list2_cnic.push(eval(res.body)[i]);					
-				};
-			}
-		  }, response => {
-		    // error callback
-		  });
-    	
-    	}
-      
+  		  this.updateflag(true);
+  			//ajax
+  		 this.$http.get('/api/shouy/find?class=price&class=tejia').then(res => {
+
+    			for(var i = 0;i<eval(res.body).length;i++){
+    				if(res.body[i].class=="tejia"){
+    					this.tejia.push(eval(res.body)[i]);
+              // console.log(tejia)
+    				};
+    				if(res.body[i].class=="price"){
+    					this.price.push(eval(res.body)[i]);					
+    				};
+    				if(res.body[i].class=="dapaiindex"){
+    					this.dapaiindex.push(eval(res.body)[i]);					
+    				};
+    				if(res.body[i].class=="list2"){
+    					this.list2_cnic.push(eval(res.body)[i]);					
+    				};
+    			}
+  		  }, response => {
+  		    // error callback
+  		  });
+      	
+      },
+      changehref(val) {
+        this.hrefVal({
+          hrefVal: val
+        });
+        console.log(this.$store.state.hrefVal);
+      }
+        
     }
   }
 </script>
@@ -184,3 +190,4 @@ import { mapGetters, mapActions } from 'vuex'
 
   }
 </style>
+ <!-- @click="changehref('{{item.hrefVal}}')" -->
