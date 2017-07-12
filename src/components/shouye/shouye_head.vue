@@ -1,10 +1,10 @@
 <template>
     <div id="header">
-      <div class="logo fl"></div>
-      <input class="input fl" type="text" placeholder="百丽集团盛夏折扣季 领卷最多减20元">
-      <div class="mesg fr">
-          <p class="span2">消息</p>
-      </div>
+        <div class="logo fl"></div>
+        <input class="input fl" type="text" placeholder="百丽集团盛夏折扣季 领卷最多减20元">
+        <div class="mesg fr">
+            <p class="span2">消息</p>
+        </div>
 
     </div>
 </template>

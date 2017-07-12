@@ -11,7 +11,7 @@
         <ul class="list4">
           <li class="fl"  v-for="item  in brands1 ">
             <a :href="item.dir">
-              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt="">
+              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt=""   @click='changehref(item.hrefVal)'>
             </a>
           </li>
         </ul>
@@ -24,7 +24,7 @@
         <ul class="list4">
           <li class="fl"  v-for="item  in brands2 ">
             <a :href="item.dir">
-              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt="">
+              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt=""   @click='changehref(item.hrefVal)'>
             </a>
           </li>
         </ul>
@@ -39,14 +39,14 @@
         <ul class="list2">
           <li class="fl"  v-for="item  in brands3img2 ">
             <a :href="item.dir">
-              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt="">
+              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt=""   @click='changehref(item.hrefVal)'>
             </a>
           </li>
         </ul>
         <ul class="list4">
            <li class="fl"  v-for="item  in brands3 ">
             <a :href="item.dir">
-              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt="">
+              <img class="dapaiindex_img" v-bind:src="item.img_src"  alt=""   @click='changehref(item.hrefVal)'>
             </a>
           </li>         
         </ul>
@@ -57,7 +57,7 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
 	
   export default {
     name: 'shouye_repeat',
@@ -75,57 +75,52 @@ import { mapGetters, mapActions } from 'vuex'
     },
     mounted(){
 	  	this.ajaxfun()
-	},
+    },
     methods: {
-      	 ...mapActions([
+      ...mapActions([
 		    'savedata',
-		    'updateflag'
-		  ]
-	    ),
+		    'updateflag',
+        'hrefVal'
+		  ]),
     	ajaxfun: function () {
-			this.updateflag(true);
-			//ajax
-			 this.$http.get('/api/shouy/find?class=price&class=tejia').then(res => {
-				for(var i = 0;i<eval(res.body).length;i++){
-	//				console.log(res.body[i].class)
-					if(res.body[i].class=="brands1"){
-						this.brands1.push(eval(res.body)[i]);
-	//					console.log(res.body[i].class);
-					};
-					if(res.body[i].class=="brands2"){
-						this.brands2.push(eval(res.body)[i]);
-					};
-					if(res.body[i].class=="brands3"){
-						if(res.body[i].price==1){
-							this.brands3img2.push(eval(res.body)[i]);
-							console.log(this.brands3img2)
-						}else if(res.body[i].price==2){
-							this.brands3bg.push(eval(res.body)[i]);							
-						}else{
-							this.brands3.push(eval(res.body)[i]);							
-						
-						}
-						
-					};
-//					if(res.body[i].class=="price"){
-//						this.price.push(eval(res.body)[i]);					
-//					};
-//					if(res.body[i].class=="dapaiindex"){
-//						this.dapaiindex.push(eval(res.body)[i]);					
-//					};
-//					if(res.body[i].class=="list2"){
-//						this.list2_cnic.push(eval(res.body)[i]);					
-//					};
-				}
-			  }, response => {
-			    // error callback
-			  });
-    	
-    	}
-    
-      
+  			this.updateflag(true);
+  			//ajax
+  		 this.$http.get('/api/shouy/find?class=price&class=tejia').then(res => {
+  				for(var i = 0;i<eval(res.body).length;i++){
+
+  					if(res.body[i].class=="brands1"){
+  						this.brands1.push(eval(res.body)[i]);	
+  					};
+
+  					if(res.body[i].class=="brands2"){
+  						this.brands2.push(eval(res.body)[i]);
+  					};
+
+  					if(res.body[i].class=="brands3"){
+
+  						if(res.body[i].price==1){
+  							this.brands3img2.push(eval(res.body)[i]);
+  							// console.log(this.brands3img2)
+  						}else if(res.body[i].price==2){
+  							this.brands3bg.push(eval(res.body)[i]);							
+  						}else{
+  							this.brands3.push(eval(res.body)[i]);													
+  						}			
+
+  					};
+  				}
+  		  }, response => {
+  		    // error callback
+  		  });
+    	},
+      changehref(val) {
+        this.hrefVal({
+          hrefVal: val
+        });
+        // console.log(this.$store.state.hrefVal);
+      }
   	}
-}
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

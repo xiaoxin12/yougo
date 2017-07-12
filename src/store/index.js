@@ -8,10 +8,15 @@ const state = {
   list: ['a','b','c'],
   lists_container:true,
   search:[],
+<<<<<<< HEAD
   hrefVal:"",
   wating:false,
   search:[],
   hrefVal: "5"
+=======
+  wating:false,
+  hrefVal: "4"
+>>>>>>> 4910597747eebf81aad5e5f24a8b770e5e78259f
 }
 const mutations = {
    addTodo(state,{text}) {
@@ -31,11 +36,25 @@ const mutations = {
     state.search.push(search_Info);
   },
   reset (state,{resetInfo}){
+<<<<<<< HEAD
     state.search=[];
   },
    hrefVal (state,{hrefVal}){
     state.hrefVal=hrefVal;
     state.search=[];
+=======
+// <<<<<<< HEAD
+    state.search=[]
+  },
+   hrefVal (state,{hrefVal}){
+    state.hrefVal=hrefVal
+// =======
+    state.search=[];
+// <<<<<<< HEAD
+  },
+  hrefVal (state,{hrefVal}){
+    state.hrefVal=hrefVal;
+>>>>>>> 4910597747eebf81aad5e5f24a8b770e5e78259f
   }
 }
 
