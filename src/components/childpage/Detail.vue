@@ -129,6 +129,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import { Swipe, SwipeItem } from 'mint-ui';
 import Vue from 'vue'
 Vue.component(Swipe.name, Swipe);
@@ -159,7 +160,7 @@ export default {
   },
   mounted: function () {
       this.$http.post('/api/det/select', {
-        id: $store.state.hrefVal
+        id: this.$store.state.hrefVal
       }).then(function(data){
       	this.swipe1 = data.body.swipe1;
       	this.swipe2 = data.body.swipe2;

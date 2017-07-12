@@ -13,7 +13,8 @@ const state = {
 //<<<<<<< HEAD
   wating:false,
 //=======
-  search:[]
+  search:[],
+  hrefVal: "1"
 //>>>>>>> 233f7b6259eda9ed06b00a497134e6995dccb61d
 }
 
