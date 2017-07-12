@@ -16,9 +16,9 @@
 			
 			<p class="otherL">---------选择其他方式登录---------</p>
 			<div class="l_o">
-				<img src="static/car/QQ.png"/>
-				<img src="static/car/pay.png"/>
-				<img src="static/car/sina.png"/>
+				<img src="static/car/QQ.png" @click="otherLogin()"/>
+				<img src="static/car/pay.png" @click="otherLogin()"/>
+				<img src="static/car/sina.png" @click="otherLogin()"/>
 			</div>
 			<div class="ff">
 				<span>正品保障</span>
@@ -106,7 +106,7 @@ export default {
     }
   },
   mounted: function () {
-  	console.log($.cookie('username'));
+//	console.log($.cookie('username'));
   	if($.cookie('username')==='null' || $.cookie('username')===undefined){
   		this.testL = false;
   	}else{
@@ -139,13 +139,20 @@ export default {
 			});
       		if(data.body.states){
 //    			this.lists = true;
-				$.cookie('username', that.name , { path: '/', expires: 1 });
+//				$.cookie('username', that.name , { path: '/', expires: 1 });
       			this.testL = true;
       		}
         }, response => {
           // error callback
           console.log("error");
         });
+    },
+    otherLogin: function(){
+    	Toast({
+		  message: "调取本地应用失败！",
+		  position: 'bottom',
+		  duration: 2000
+		});
     },
     zhuxiao: function() {
     	$.cookie('username', null);

@@ -127,7 +127,7 @@
 		<div class="car_foot">
 			<span class="one l">收藏</span>
 			<router-link to="/dingdan" class="two l">购物车</router-link>
-			<span class="ok">确认</span>
+			<span class="ok" @click="addToCart()">确认</span>
 		</div>
 	</div>
 </div>
@@ -136,6 +136,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import { Swipe, SwipeItem } from 'mint-ui';
+import { Toast } from 'mint-ui';
 import Vue from 'vue'
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
@@ -162,15 +163,21 @@ export default {
     	more_pic: "",
     	more_price: "",
     	car: false,
-    	color: "请选择颜色",
+    	color: "黑色",
     	chima: "尺码",
     	more_color: [],
     	more_chima:[],
     	selectone: '',
-    	selecttwo: ''
+    	selecttwo: '',
+    	username: ''
     }
   },
   mounted: function () {
+  	  if($.cookie('username')==='null' || $.cookie('username')===undefined){
+	  		this.username = '';
+	  	}else{
+	  		this.username = $.cookie('username');
+	  	}
       this.$http.post('/api/det/select', {
         id: this.$store.state.hrefVal
       }).then(function(data){
@@ -199,13 +206,13 @@ export default {
    	 	var chima = "";
    	 	var that = this;
    	 	setTimeout(function(){
-	   	 	console.log(that.cla);
 	   	 	if(that.cla === '1'){
 	   	 		chima = '/data/choose_chima.json';
+	   	 		that.chima = '33';
 	   	 	}else{
-	   	 		chima = '/data/choose_chima1.json'
+	   	 		chima = '/data/choose_chima1.json';
+	   	 		that.chima = 'XS';
 	   	 	}
-	   	 	console.log(chima);
 	        that.$http.get(chima)
 	        .then(function(res){
 	        	that.more_chima = res.data
@@ -227,6 +234,33 @@ export default {
   	chose_chima: function(msg,index){
   		this.chima = msg;
   		this.selecttwo = index;
+  	},
+  	addToCart: function(){
+  		if($.cookie('username')==='null' || $.cookie('username')===undefined){
+			location = '#/wode';
+			return;
+	  	}
+  		var that = this;
+  		this.$http.post('/api/car/add', {
+  			username: that.username,
+        	pro_name: that.pro_name,
+        	price: that.price,
+        	pro_pic: that.swipe1,
+        	chima: that.chima,
+        	color: that.color,
+        	count: '1'
+      	}).then(function(res){
+//    		console.log(res);
+      		Toast({
+			  message: res.body,
+			  position: 'bottom',
+			  duration: 3000
+			});
+			that.car = false;
+        }, response => {
+          	// error callback
+          	console.log("error");
+        });
   	}
   }
 }
@@ -286,7 +320,7 @@ export default {
 		height: 8rem;
 		width: 100%;
 		position: absolute;
-		bottom: 1.2rem;
+		bottom: 1.1rem;
 		background: #fff;
 		.chose_color,.chose_chima{
 			p{
@@ -300,7 +334,7 @@ export default {
 				display: inline-block;
 				padding: 0.15rem 0.2rem;
 				border: 1px solid #ccc;
-				background: #87CEEB;
+				background: #eee;
 				color: #666;
 				border-radius: 5px;
 				margin: 0.2rem;
@@ -382,14 +416,14 @@ export default {
 	}
 	.swiper{
 		height: 7rem;
-		width: 8rem;
-		margin-left: 1rem;
+		width: 7rem;
+		margin-left: 1.5rem;
 		overflow: hidden;
 		background: #f5f5f5;
 		text-align: center;
 		img{
 			height: 100%;
-			width: 8rem;
+			width: 7rem;
 		}
 	}
 	.name{
