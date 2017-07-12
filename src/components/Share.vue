@@ -63,7 +63,6 @@ export default {
     }
   },
   mounted: function () {
-  	console.log($.cookie('username'));
   	if($.cookie('username')==='null' || $.cookie('username')===undefined){
   		this.username = '请登录';
   	}else{

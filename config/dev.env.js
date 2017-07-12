@@ -7,5 +7,4 @@ module.exports = merge(prodEnv, {
   proxyTable: {'/api': {target: 'http://10.2.153.179/thinkphp/public/', changeOrigin: true},
   '/data': {target: 'https://heweijie.me', changeOrigin: true}
   }
-
 })

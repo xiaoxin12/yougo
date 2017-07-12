@@ -104,25 +104,30 @@
 	<div id="foot">
 		<span class="one l">收藏</span>
 		<router-link to="/dingdan" class="two l">购物车</router-link>
-		<span class="three l">加入购物车</span>
+		<span class="three l" @click="showcar()">加入购物车</span>
 		<span class="four l">立即购买</span>
 	</div>
 	<div class="car" v-show="car">
 		<div class="car_hea">
-			<img :src="swipe1"/>
+			<img :src="swipe1" class="pro"/>
+			<p class="car_price">{{price}}</p>
+			<p class="cm">{{color}}/{{chima}}</p>
+			<img src="static/detail/pic_008.png" class="close" @click="showcar()"/>
 		</div>
 		<div class="car_con">
 			<div class="chose_color">
-				
+				<p>选择颜色：</p>
+				<span @click="chose_color(color.color,index)" v-for="(color,index) in more_color" :class="{ choose: index == selectone}">{{color.color}}</span>
 			</div>
 			<div class="chose_chima">
-				
+				<p>选择尺码：</p>
+				<span @click="chose_chima(chima.chima,index)" v-for="(chima,index) in more_chima" :class="{ choose: index == selecttwo}">{{chima.chima}}</span>
 			</div>
 		</div>
 		<div class="car_foot">
 			<span class="one l">收藏</span>
 			<router-link to="/dingdan" class="two l">购物车</router-link>
-			<span class="ok">确认</span>
+			<span class="ok" @click="addToCart()">确认</span>
 		</div>
 	</div>
 </div>
@@ -131,6 +136,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import { Swipe, SwipeItem } from 'mint-ui';
+import { Toast } from 'mint-ui';
 import Vue from 'vue'
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
@@ -142,6 +148,7 @@ export default {
   data () {
     return {
     	menu: false,
+    	cla: "",
     	swipe1: "",
     	swipe2: "",
     	swipe3: "",
@@ -155,13 +162,26 @@ export default {
     	more_pro_name: "",
     	more_pic: "",
     	more_price: "",
-    	car: false
+    	car: false,
+    	color: "黑色",
+    	chima: "尺码",
+    	more_color: [],
+    	more_chima:[],
+    	selectone: '',
+    	selecttwo: '',
+    	username: ''
     }
   },
   mounted: function () {
+  	  if($.cookie('username')==='null' || $.cookie('username')===undefined){
+	  		this.username = '';
+	  	}else{
+	  		this.username = $.cookie('username');
+	  	}
       this.$http.post('/api/det/select', {
         id: this.$store.state.hrefVal
       }).then(function(data){
+      	this.cla = data.body.pro_class;
       	this.swipe1 = data.body.swipe1;
       	this.swipe2 = data.body.swipe2;
       	this.swipe3 = data.body.swipe3;
@@ -179,10 +199,68 @@ export default {
           // error callback
           console.log("error");
         });
+        this.$http.get('/data/choose_color.json')
+        .then(function(res){
+        	this.more_color = res.data
+   	 	});
+   	 	var chima = "";
+   	 	var that = this;
+   	 	setTimeout(function(){
+	   	 	if(that.cla === '1'){
+	   	 		chima = '/data/choose_chima.json';
+	   	 		that.chima = '33';
+	   	 	}else{
+	   	 		chima = '/data/choose_chima1.json';
+	   	 		that.chima = 'XS';
+	   	 	}
+	        that.$http.get(chima)
+	        .then(function(res){
+	        	that.more_chima = res.data
+	   	 	});
+   	 	},1000)
   },
   methods: {
   	showmenu: function(){
   		this.menu = !this.menu;
+  	},
+  	showcar: function(){
+  		this.car = !this.car;
+  	},
+  	chose_color: function(msg,index){
+  		this.color = msg;
+  		this.selectone = index;
+  	}
+  	,
+  	chose_chima: function(msg,index){
+  		this.chima = msg;
+  		this.selecttwo = index;
+  	},
+  	addToCart: function(){
+  		if($.cookie('username')==='null' || $.cookie('username')===undefined){
+			location = '#/wode';
+			return;
+	  	}
+  		var that = this;
+  		this.$http.post('/api/car/add', {
+  			username: that.username,
+        	pro_name: that.pro_name,
+        	price: that.price,
+        	pro_pic: that.swipe1,
+        	chima: that.chima,
+        	color: that.color,
+        	count: '1'
+      	}).then(function(res){
+//    		console.log(res);
+      		Toast({
+			  message: res.body,
+			  position: 'bottom',
+			  duration: 3000
+			});
+			that.car = false;
+        }, response => {
+          	// error callback
+          	console.log("error");
+        });
   	}
   }
 }
@@ -202,24 +280,69 @@ export default {
 		height: 3rem;
 		width: 100%;
 		position: absolute;
-		bottom: 9.2rem;
+		bottom: 9.1rem;
 		background: #fff;
 		border-bottom: 1px solid #ccc;
-		img{
+		z-index: 1;
+		.pro{
 			position: absolute;
-			width: 4rem;
-			height: 4rem;
-			top: -2rem;
-			left: 1rem;
+			width: 3rem;
+			height: 3rem;
+			top: -1rem;
+			left: 0.5rem;
 			border: 1px solid #ccc;
+		}
+		.close{
+			position: absolute;
+			width: 0.7rem;
+			height: 1.5rem;
+			top: -1rem;
+			left: 8.5rem;
+		}
+		.car_price{
+			width: 3rem;
+			font-size: 18px;
+			color: red;
+			position: absolute;
+			left: 4rem;
+			top: 0.5rem;
+		}
+		.cm{
+			width: 5rem;
+			font-size: 14px;
+			color: #666;
+			position: absolute;
+			left: 4rem;
+			top: 1.5rem;
 		}
 	}
 	.car_con{
 		height: 8rem;
 		width: 100%;
 		position: absolute;
-		bottom: 1.2rem;
+		bottom: 1.1rem;
 		background: #fff;
+		.chose_color,.chose_chima{
+			p{
+				height: 1rem;
+				line-height: 1rem;
+				color: #666;
+				font-size: 16px;
+				padding-left: 0.5rem;
+			}
+			span{
+				display: inline-block;
+				padding: 0.15rem 0.2rem;
+				border: 1px solid #ccc;
+				background: #eee;
+				color: #666;
+				border-radius: 5px;
+				margin: 0.2rem;
+			}
+			.choose{
+				background: yellow;
+			}
+		}
 	}
 	.car_foot{
 		position: absolute;
@@ -233,22 +356,22 @@ export default {
 		}
 		.one,.two{
 			width: 2rem;
-			height: 1rem;
+			height: 1.2rem;
 			font-size: 10px;
-			background: url(../../assets/detail/pic_056.png) no-repeat center 0.1rem #fff;
+			background: url(../../assets/detail/pic_056.png) no-repeat center 0.2rem #fff;
 			background-size: 0.5rem;
-			padding-top: 0.5rem;
+			padding-top: 0.6rem;
 			text-align: center;
 		}
 		.two{
-			background: url(../../assets/detail/pic_057.png) no-repeat center 0.1rem #fff;
+			background: url(../../assets/detail/pic_057.png) no-repeat center 0.2rem #fff;
 			background-size: 0.5rem;
 		}
 		.ok{
 			width: 6rem;
-			height: 1rem;
+			height: 1.2rem;
 			background: #FF3300;
-			line-height: 1rem;
+			line-height: 1.2rem;
 			color: #fff;
 		}
 	}
@@ -293,14 +416,14 @@ export default {
 	}
 	.swiper{
 		height: 7rem;
-		width: 8rem;
-		margin-left: 1rem;
+		width: 7rem;
+		margin-left: 1.5rem;
 		overflow: hidden;
 		background: #f5f5f5;
 		text-align: center;
 		img{
 			height: 100%;
-			width: 8rem;
+			width: 7rem;
 		}
 	}
 	.name{
