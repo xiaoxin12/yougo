@@ -7,11 +7,6 @@ const state = {
   count: 0,
   list: ['a','b','c'],
   lists_container:true,
-<<<<<<< HEAD
-=======
-  search:[],
-  hrefVal:"",
->>>>>>> 895b5d0edd500a85c91861690d9d2819b62af50b
   wating:false,
   search:[],
   hrefVal: "1"

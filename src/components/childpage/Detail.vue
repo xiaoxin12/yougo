@@ -263,6 +263,19 @@ export default {
         });
   	},
   	maimaimai: function(){
+  		var that = this;
+  		this.$http.post('/api/car/myorderAdd', {
+  			hrefVal: this.$store.state.hrefVal,
+  			chicun: this.color+'/'+this.chima,
+  			count: '1',
+  			user: this.username
+      	}).then(function(res){
+      		console.log(res);
+
+        }, response => {
+          	// error callback
+          	console.log("error");
+        });
   		location = '#/myorder';
   	}
   }
