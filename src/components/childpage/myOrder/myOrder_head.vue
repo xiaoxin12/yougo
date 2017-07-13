@@ -28,28 +28,29 @@
 					<div v-for="(sort,index)  in product " >
 						<div class="shop" >
 							<div class="title">
-								<p class="creat_time fl">下单时间:{{sort.creattime}}</p>
+								<p class="creat_time fl">下单时间:{{sort.creat_time}}</p>
 								<!-- 这里输入订单状态 -->
-								<span class="fr state">{{sort.assert}}</span>
+								<span class="fr state">{{sort.conditions}}</span>
 							</div>
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
-									<a href="">
-										<img v-bind:src="sort.src">
+									<a href="#/detail">
+										<img v-bind:src="sort.swipe1"    @click='changehref(item.detail_id)' >
 									</a>
 								</span>
 								<section class="fl">
-									<p>{{sort.description}}</p>
+									<a href="#/detail" @click='changehref(item.hrefVal)'>{{sort.pro_name}}</a>
+									<p>{{sort.chicun}}</p>
 								</section>
 							</div>
 							<div class="footers">
 								<div class="fl">总计：
-									<span class="price">￥{{sort.price}}元</span>
+									<span class="price">{{sort.price}}元</span>
 									（共 <span class="count">{{sort.count}}件</span>）
 								</div>
 								<div class="footer_fr fr">
-									<a href="">{{sort.again}}</a>
+									<a href="">再次购买</a>
 								</div>
 							</div>
 						</div>
@@ -58,64 +59,67 @@
 				</mt-tab-container-item>
 
 				<mt-tab-container-item id="2">
-					<div v-for="n in 2" :title="'内容 ' + n" >
-						<div class="shop">
+					<div v-for="(sort,index)  in waiting " >
+						<div class="shop" >
 							<div class="title">
-								<p class="creat_time fl">下单时间:2017-06-30</p>
+								<p class="creat_time fl">下单时间:{{sort.creat_time}}</p>
 								<!-- 这里输入订单状态 -->
-								<span class="fr state">代付款</span>
+								<span class="fr state">{{sort.conditions}}</span>
 							</div>
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
-									<a href="">
-										<img src="http://i2.ygimg.cn/pics/converse/2016/100368752/100368752_01_m.jpg?4">
+									<a href="#/detail">
+										<img v-bind:src="sort.swipe1"    @click='changehref(item.detail_id)' >
 									</a>
 								</span>
 								<section class="fl">
-									<p>这里是对产品的描述</p>
+									<a href="#/detail" @click='changehref(item.hrefVal)'>{{sort.pro_name}}</a>
+									<p>{{sort.chicun}}</p>
 								</section>
 							</div>
 							<div class="footers">
 								<div class="fl">总计：
-									<span class="price">￥262元</span>
-									（共 <span class="count">1件</span>）
+									<span class="price">{{sort.price}}元</span>
+									（共 <span class="count">{{sort.count}}件</span>）
 								</div>
 								<div class="footer_fr fr">
-									<a href="">重新购买</a>
+									<a href="">再次购买</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					
+					
 				</mt-tab-container-item>
 
 				<mt-tab-container-item id="3">
-					<div v-for="n in 2" :title="'内容 ' + n" >
-						<div class="shop">
+					<div v-for="(sort,index)  in haded " >
+						<div class="shop" >
 							<div class="title">
-								<p class="creat_time fl">下单时间:2017-06-30</p>
+								<p class="creat_time fl">下单时间:{{sort.creat_time}}</p>
 								<!-- 这里输入订单状态 -->
-								<span class="fr state">交易成功</span>
+								<span class="fr state">{{sort.conditions}}</span>
 							</div>
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
-									<a href="">
-										<img src="http://i2.ygimg.cn/pics/converse/2016/100368752/100368752_01_m.jpg?4">
+									<a href="#/detail">
+										<img v-bind:src="sort.swipe1"    @click='changehref(item.detail_id)' >
 									</a>
 								</span>
 								<section class="fl">
-									<p>这里是对产品的描述</p>
+									<a href="#/detail" @click='changehref(item.hrefVal)'>{{sort.pro_name}}</a>
+									<p>{{sort.chicun}}</p>
 								</section>
 							</div>
 							<div class="footers">
 								<div class="fl">总计：
-									<span class="price">￥262元</span>
-									（共 <span class="count">1件</span>）
+									<span class="price">{{sort.price}}元</span>
+									（共 <span class="count">{{sort.count}}件</span>）
 								</div>
 								<div class="footer_fr fr">
-									<a href="">重新购买</a>
+									<a href="">再次购买</a>
 								</div>
 							</div>
 						</div>
@@ -125,31 +129,32 @@
 
 			   
 				<mt-tab-container-item id="4">
-					<div v-for="n in 2" :title="'内容 ' + n" >
-						<div class="shop">
+					<div v-for="(sort,index)  in shouhou " >
+						<div class="shop" >
 							<div class="title">
-								<p class="creat_time fl">下单时间:2017-06-30</p>
+								<p class="creat_time fl">下单时间:{{sort.creat_time}}</p>
 								<!-- 这里输入订单状态 -->
-								<span class="fr state">售后记录</span>
+								<span class="fr state">{{sort.conditions}}</span>
 							</div>
 							<!-- 这里是图片和描述 -->
 							<div class="div_img">
 								<span class="fl">
-									<a href="#">
-										<img src="http://i2.ygimg.cn/pics/converse/2016/100368752/100368752_01_m.jpg?4">
+									<a href="#/detail">
+										<img v-bind:src="sort.swipe1"    @click='changehref(item.detail_id)' >
 									</a>
 								</span>
 								<section class="fl">
-									<p>这里是对产品的描述</p>
+									<a href="#/detail" @click='changehref(item.hrefVal)'>{{sort.pro_name}}</a>
+									<p>{{sort.chicun}}</p>
 								</section>
 							</div>
 							<div class="footers">
 								<div class="fl">总计：
-									<span class="price">￥262元</span>
-									（共 <span class="count">1件</span>）
+									<span class="price">{{sort.price}}元</span>
+									（共 <span class="count">{{sort.count}}件</span>）
 								</div>
 								<div class="footer_fr fr">
-									<a href="">重新购买</a>
+									<a href="">再次购买</a>
 								</div>
 							</div>
 						</div>
@@ -189,7 +194,11 @@ export default {
     return {
     	selected:'1',
     	menu: false,
-    	product:[]
+    	product:[],
+    	waiting:[],
+    	haded:[],
+    	shouhou:[],
+    	// user:''
     }
   },
   mounted(){
@@ -198,7 +207,8 @@ export default {
   methods: {
   	 ...mapActions([
 	    'savedata',
-	    'updateflag'
+	    'updateflag',
+        'hrefVal'
 	  ]
     ),
   	showmenu: function(){
@@ -208,27 +218,41 @@ export default {
 		console.log('准备发送ajax进行链表查询返回订单信息');		
   	},
   	ajaxfun: function () {
-		this.updateflag(true);
+		// this.updateflag(true);
 		//ajax
 		// GET /someUrl
-		 this.$http.get('/data/dingdan.json').then(res => {
-		
-		    // get body data
-		   
-//		    console.log(JSON.parser(res));
-			for(var i = 0;i<eval(res.body).length;i++){
-				this.product .push(eval(res.body)[i]);
-				console.log((res.body)[i]);
-			}
-		    
-		    console.log( this.product);
+		console.log($.cookie('username'));
+	  	if($.cookie('username')==='null' || $.cookie('username')===undefined){
+	  		alert('您还未登录，请先去登录')
+	  	}else{
+	  		var	user = $.cookie('username');
+	  		// console.log(user);
+			 this.$http.get('/api/car/myorderSel?user='+user).then(res => {
+			
 
-//		    this.someData = response.body;
-		
-		  }, response => {
-		    // error callback
-		  });
+				for(var i = 0;i<eval(res.body).length;i++){
+					this.product .push(eval(res.body)[i]);
+					if(res.body[i].conditions=="待付款"){
+	    				this.waiting.push(eval(res.body)[i]);
+	    			};
+	    			if(res.body[i].conditions=="已完成"){
+	    				this.haded.push(eval(res.body)[i]);
+	    			};
+	    			if(res.body[i].conditions=="售后记录"){
+	    				this.haded.push(eval(res.body)[i]);
+	    			};
+				}
+			  }, response => {
+			    // error callback
+			  });
+	  	}
     	
+    },
+    changehref(val) {
+        this.hrefVal({
+          hrefVal: val
+        });
+        console.log(this.$store.state.hrefVal);
     }
   }
 }
@@ -311,6 +335,9 @@ ul,ol{
 			padding: 0 0.2rem;
 			border-bottom: 1px solid #ccc; 
 			.creat_time{
+				width: 5rem;
+				height: 1rem;
+				overflow: hidden;
 				// background:green;
 			}
 			.state{
@@ -321,6 +348,7 @@ ul,ol{
 			width:100%;
 			height: 3rem;
 			padding:0.5rem 0.2rem;
+			font-size: 14px;
 			// background:yellow;
 			border-bottom: 1px solid #ccc; 
 			span.fl{
@@ -332,6 +360,15 @@ ul,ol{
 					}
 					margin-right:1rem;
 
+				}
+			}
+			section{
+				width: 6.4rem;
+				a{
+					color:#333;
+				}
+				p{
+					font-size: 12px;
 				}
 			}
 		}
@@ -349,7 +386,8 @@ ul,ol{
 				a{
 					border:1px solid red;
 					color: red;
-					padding:0.2rem;
+					padding:0.1rem;
+					border-radius:3px;
 				}
 			}
 
