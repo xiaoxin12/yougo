@@ -9,7 +9,7 @@
 				<span class="login1" @click="login1" :class="{ active: isActive }">账号登录</span><span class="login2" @click="login2" :class="{ active: !isActive }">手机登录</span>
 			</p>
 			<input type="text" v-model="name" v-bind:placeholder="o_t"/>
-			<input type="password" v-model="pw" placeholder="请输入密码"/>
+			<input type="password" v-model="pw" placeholder="请输入密码,数字5~20位"/>
 			<button @click="login">{{loading}}</button>
 			<p class="news">新人见面礼  新会员登录即送千元大礼包<br /><span class="s1">未注册的用户在登录时将直接注册，注册成功即代表您已同意</span>
 				<span class="s2">《用户协议》</span></p>
@@ -88,6 +88,11 @@ import { mapGetters, mapActions } from 'vuex'
 import { Toast } from 'mint-ui';
 //http://mint-ui.github.io/docs/#/zh-cn2     ui使用文档地址
 //https://github.com/alfhen/vue-cookie    Cookie用法网址
+//localStorage.getItem(key):获取指定key本地存储的值
+//
+//localStorage.setItem(key,value)：将value存储到key字段
+//
+//localStorage.removeItem(key):删除指定key本地存储的值
 import Navbar  from './Nav.vue'
 export default {
   name: 'wode',
@@ -96,37 +101,65 @@ export default {
   },
   data () {
     return {
-      o_t: '请输入用户名',
+      o_t: '请输入用户名,数字、字母或下划线5~20位',
       name: '',
       pw: '',
       lists: false,
       isActive: true,
       loading: '登录',
-      testL: false
+      testL: false,
+      loginState: '/api/users/login',
+      zeze: /^\w{5,20}$/
     }
   },
   mounted: function () {
-//	console.log($.cookie('username'));
-  	if($.cookie('username')==='null' || $.cookie('username')===undefined){
-  		this.testL = false;
-  	}else{
-  		this.testL = true;
-  		this.name = $.cookie('username');
-  	}
+	if(($.cookie('username')==='null' || $.cookie('username')===undefined) && localStorage.getItem('username') === null){
+		this.testL = false;
+	}else{
+		this.testL = true;
+  		this.name =  localStorage.getItem('username')===null ? $.cookie('username') : localStorage.getItem('username');
+  		console.log(this.name);
+	}
   },
   methods: {
   	login1: function(){
-  		this.o_t = '请输入用户名';
+  		this.o_t = '请输入用户名,数字、字母或下划线5~20位';
   		this.isActive = true;
+//		this.loginState = '/api/users/login';
+  		this.zeze = /^\w{5,20}$/;
   	},
   	login2: function(){
   		this.o_t = '请输入11位手机号';
   		this.isActive = false;
+//		this.loginState = '/api/users/login2';
+  		this.zeze = /^1(3|4|5|7|8)\d{9}$/;
   	},
   	login: function() {
   	  var that = this;
+  	  var zeze1 = /^\d{5,20}$/;
+  	  console.log(this.zeze.test(this.name));
+  	  if(!this.zeze.test(this.name)){
+  	  	this.name = '';
+  	  	console.log('用户名格式不符合');
+  	  		Toast({
+			  message: '用户名格式不符合',
+			  position: 'bottom',
+			  duration: 3000
+			});
+  	  	return;
+  	  }
+  	  if(!zeze1.test(this.pw)){
+  	  	this.pw = '';
+  	  	console.log('密码格式错误');
+  	  		Toast({
+			  message: '密码格式错误',
+			  position: 'bottom',
+			  duration: 3000
+			});
+  	  	return;
+  	  }
   	  that.loading = "正在登录，请稍候";
-      this.$http.post('/api/users/login', {
+      this.$http.post(that.loginState, {
         name: this.name,
         pw: this.pw
       }).then(function(data){
@@ -135,11 +168,12 @@ export default {
 			Toast({
 			  message: data.body.msg,
 			  position: 'bottom',
-			  duration: 5000
+			  duration: 3000
 			});
       		if(data.body.states){
 //    			this.lists = true;
 //				$.cookie('username', that.name , { path: '/', expires: 1 });
+				localStorage.setItem('username',that.name);
       			this.testL = true;
       		}
         }, response => {
@@ -156,6 +190,7 @@ export default {
     },
     zhuxiao: function() {
     	$.cookie('username', null);
+    	localStorage.removeItem("username");
     	this.name = '';
     	this.testL = false;
     },

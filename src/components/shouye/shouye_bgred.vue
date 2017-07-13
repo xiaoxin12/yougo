@@ -23,7 +23,7 @@
           </ul>
         
       <!--折是空白线-->
-      <img class="dapaiindex_img" src="static/image/index/line-margin.jpg" alt="">
+      <img class="dapaiindex_img" src="static/image/index/line-margin.jpg" alt="" style="width: 10rem;">
 
       <section>
           <ul class="list2">
