@@ -3,7 +3,7 @@
 		<div id="header">
 			<div class="listPage" v-show="$store.state.lists_container">
 				<div class="arrow">
-					<a href="/"><img src="static/lists/nvxie/new-back.png"></img>
+					<a href="#/lists"><img src="static/lists/nvxie/new-back.png"></img>
 					</a>
 				</div>
 				<div class="search">
@@ -30,15 +30,15 @@
 				<ul>
 					<li v-for="items in search">
 						<dl>
-							<dt><a href="" class="aaa"><img :src="items.list_src"></a></dt>
+							<dt><a href="#/detail" class="aaa"><img :src="items.list_src"></a></dt>
 							<dd>
-								<a href="" class="aaa title">
+								<a href="#/detail" class="aaa title">
 									<p>销量：{{items.salecount}}</p>
 									<span>{{items.bewrite}}</span>
 								</a>
 								<div class="price">
 									<span>￥{{items.price}}</span>
-									<a href="" class="aaa"><i class="iconfont downcc">&#xe66c;</i></a>
+									<a href="#/detail" class="aaa"><i class="iconfont downcc">&#xe66c;</i></a>
 								</div>
 							</dd>
 						</dl>

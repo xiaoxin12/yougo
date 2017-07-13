@@ -3,7 +3,7 @@
 		<div id="header">
 			<div class="listPage" v-show="$store.state.lists_container">
 				<div class="arrow">
-					<a href="/"><img src="static/lists/nvxie/new-back.png"></img>
+					<a href="#/lists"><img src="static/lists/nvxie/new-back.png"></img>
 					</a>
 				</div>
 				<div class="search">

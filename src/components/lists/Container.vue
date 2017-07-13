@@ -1,7 +1,7 @@
 <template>
 	<div id="container">
 		<div class="containerPage" v-show="$store.state.lists_container">
-			<ul class="aside">
+			<ul class="aside" >
 				<li v-for="(sort,index) in productList" @click="getTabDetail(index)" v-bind:class="{ linvxie: index==selectItem }">
 					{{sort.name}}
 				</li>
@@ -17,8 +17,8 @@
 				</div>
 				<div class="ulW">
 					<ul>
-						<li v-for="(item,index) in product_1" >
-							<a href="#/listpage1">
+						<li v-for="(item,index) in product_1" @click="changeHref(index)">
+							<a :href="changesrc" >
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -48,7 +48,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_3">
-							<a href="">
+							<a href="#/detail" @click="changehref(3)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -98,7 +98,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_6">
-							<a href="">
+							<a href="#/listpage1">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -106,7 +106,7 @@
 					</ul>
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/detail" @click="changehref(1)">
 						<p>男士单鞋</p>
 					</a>
 				</div>
@@ -121,7 +121,7 @@
 					</ul>
 				</div>
 				<div class="title">
-					<a href="">
+					<a href="#/detail" @click="changehref(1)">
 						<p>男士靴子</p>
 					</a>
 				</div>
@@ -204,7 +204,7 @@
 				<div class="ulW">
 					<ul>
 						<li v-for="item in product_12">
-							<a href="#/detail" @click="changehref(2)">
+							<a href="#/detail" @click="changehref(11)">
 								<img v-bind:src="item.list_src" alt="" />
 								<p>{{item.list_dir}}</p>
 							</a>
@@ -488,6 +488,7 @@
 				selectItem: 0,
 				type: "nvxie",
 				isnvxie: "ture",
+				changesrc:"",
 				productList: [],
 				product_1: [],
 				product_2: [],
@@ -520,7 +521,15 @@
 		methods: {
 			getTabDetail(index) {
 				this.selectItem = index
-			
+				
+			},
+			changeHref(index){
+				if(index=="8"){
+					this.changesrc="#/listpage"
+					
+				}else{
+					this.changesrc="#/listpage1"
+				}
 			},
 			readyss: function() {
 				this.$http.get('/data/lists.json')
@@ -608,6 +617,7 @@
 						
 					})
 			},
+
 			...mapActions([
 				'reset',
 				"hrefVal"
@@ -639,6 +649,7 @@
 		overflow-x: hidden;
 		.containerPage {
 			ul.aside {
+				overflow-x:hidden ;
 				width: pr(250px);
 				display: flex;
 				flex-direction: column;
