@@ -105,7 +105,7 @@
 		<span class="one l">收藏</span>
 		<router-link to="/dingdan" class="two l">购物车</router-link>
 		<span class="three l" @click="showcar()">加入购物车</span>
-		<span class="four l">立即购买</span>
+		<span class="four l" @click="maimaimai()">立即购买</span>
 	</div>
 	<div class="car" v-show="car">
 		<div class="car_hea">
@@ -173,11 +173,11 @@ export default {
     }
   },
   mounted: function () {
-  	  if($.cookie('username')==='null' || $.cookie('username')===undefined){
-	  		this.username = '';
-	  	}else{
-	  		this.username = $.cookie('username');
-	  	}
+  	  	if(($.cookie('username')==='null' || $.cookie('username')===undefined) && localStorage.getItem('username') === null){
+			this.username = '';
+		}else{
+	  		this.username =  localStorage.getItem('username')===null ? $.cookie('username') : localStorage.getItem('username');
+		}
       this.$http.post('/api/det/select', {
         id: this.$store.state.hrefVal
       }).then(function(data){
@@ -261,6 +261,9 @@ export default {
           	// error callback
           	console.log("error");
         });
+  	},
+  	maimaimai: function(){
+  		location = '#/myorder';
   	}
   }
 }

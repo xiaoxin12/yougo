@@ -63,11 +63,11 @@ export default {
     }
   },
   mounted: function () {
-  	if($.cookie('username')==='null' || $.cookie('username')===undefined){
-  		this.username = '请登录';
-  	}else{
-  		this.username = $.cookie('username');
-  	}
+  	if(($.cookie('username')==='null' || $.cookie('username')===undefined) && localStorage.getItem('username') === null){
+		this.username = '请登录';
+	}else{
+  		this.username =  localStorage.getItem('username')===null ? $.cookie('username') : localStorage.getItem('username');
+	}
   }
 }
 </script>
