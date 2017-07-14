@@ -7,7 +7,10 @@ export const actions = {
 	listCon: ({ commit }, { lists_container }) => {
 		commit('listCon',{ lists_container:lists_container })
 	},
-
+	listCons: ({ commit }, { shouye }) => {
+		commit('listCons',{ shouye:shouye })
+	},
+	
 	updateflag: ({ commit }, { flag}) => {
 		commit('updateflag',{ flag:flag })
 		

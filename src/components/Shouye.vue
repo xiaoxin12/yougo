@@ -1,10 +1,18 @@
 <template>
 <div class="all Shouye">
   <Shouye_head></Shouye_head>
+  
 	<div id="con">
-    <shouye_swiper></shouye_swiper>
-    <Shouye_bgred></Shouye_bgred>
-    <Shouye_repeat></Shouye_repeat>
+      <div  v-show="!$store.state.shouye">
+        <Containers></Containers>
+      </div>
+
+    <div v-show="$store.state.shouye">
+        <shouye_swiper></shouye_swiper>
+          <Shouye_bgred></Shouye_bgred>
+          <Shouye_repeat></Shouye_repeat>
+    </div>
+  
 	</div>
 	<navbar></navbar>
 </div>
@@ -17,7 +25,7 @@
   import Shouye_swiper  from './shouye/Shouye_swiper.vue'
   import Shouye_bgred  from './shouye/Shouye_bgred.vue'
   import Shouye_repeat  from './shouye/shouye_repeat.vue'
-
+  import Containers  from './shouye/Container.vue'
 
 export default {
   name: 'shouye',
@@ -26,7 +34,9 @@ export default {
     Shouye_head,
     Shouye_swiper,
     Shouye_bgred,
-    Shouye_repeat
+    Shouye_repeat,
+    Containers,
+
   },
   data () {
     return {
